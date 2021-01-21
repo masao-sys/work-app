@@ -28,6 +28,7 @@ gem 'devise'
 gem 'faker'
 gem 'hamlit'
 gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
