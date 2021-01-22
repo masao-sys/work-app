@@ -7,6 +7,10 @@ class Ability
     if user.try(:admin?)
       can :access, :rails_admin
       can :manage, :all
+    else
+      cannot :access, :rails_admin
+      cannot :access, :edit_basic_profile_path
+      cannot [:update], BasicProfile
     end
     # Define abilities for the passed in user here. For example:
     #
