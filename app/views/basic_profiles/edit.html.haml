@@ -7,7 +7,7 @@
     %div
       = f.label :name, '氏名'
     %div
-      = f.text_field :nickname, class: 'text'
+      = f.text_field :name, class: 'text'
     %div
       = f.label :birthday, '生年月日'
     %div
@@ -19,6 +19,6 @@
     %div
       = f.label :department, '所属'
     %div
-      = f.select :gender, BasicProfile.departments.keys, {}, { class: 'text' }
+      = f.select :department, BasicProfile.departments.keys, {}, { class: 'text' }
 
     = f.submit '保存', class: 'btn-primary'
