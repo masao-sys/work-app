@@ -16,5 +16,7 @@
 #  index_basic_profiles_on_user_id  (user_id)
 #
 class BasicProfile < ApplicationRecord
+  enum gender: { male: 0, female: 1, other: 2 }
+  enum department: { management: 0, sales: 1, peoduction: 2, development:3 }
   belongs_to :user
 end
