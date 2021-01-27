@@ -15,10 +15,10 @@
     %div
       = f.label :gender, '性別'
     %div
-      = f.select :gender, BasicProfile.genders.keys, {}, { class: 'text' }
+      = f.select :gender, BasicProfile.genders.map { |k, v| [ I18n.t("enum.genders.#{k}"), k ] }, {}, { class: 'text' }
     %div
       = f.label :department, '所属'
     %div
-      = f.select :department, BasicProfile.departments.keys, {}, { class: 'text' }
+      = f.select :department, BasicProfile.departments.map { |k, v| [ I18n.t("enum.departments.#{k}"), k ] }, {}, { class: 'text' }
 
     = f.submit '保存', class: 'btn-primary'

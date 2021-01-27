@@ -1,0 +1,11 @@
+ja:
+  enum:
+    departments:
+      management: '経営部'
+      sales: '営業部'
+      peoduction: '製造部'
+      development: '開発部'
+    genders:
+      male: '男性'
+      female: '女性'
+      other: 'その他'

@@ -1,13 +1,38 @@
 .container.profilePage
   .profilePage_user
-    .profilePage_user_image
-      = image_tag 'default-avatar.png'
-    .profilePage_user_basicInfo
-      .profilePage_user_name
-        .profilePage_user_displayName
+    .profilePage_user_icon
+      .profilePage_user_icon_background
+        = image_tag 'Rectangle (1).png'
+        .profilePage_user_icon_image
+          = image_tag 'default-avatar.png'
+    .profilePage_user_name
+      .profilePage_user_displayName
+        = current_user.display_name
+      -# - if can? :read, @basic_profile
+      .profilePage_user_actionButton
+        = link_to 'Edit', edit_basic_profile_path
+    .profilePage_user_department
+      #{I18n.t("enum.departments.#{current_user.department}")}
+  
+  .profilePage_title
+    %h2 基本データ
+    %span 基本データは管理者のみが編集可能な情報です。
+  .profilePage_basic
+    .profilePage_basic_title
+      %h3 基本情報
+    .profilePage_basic_content
+      .profilePage_basic_content_type
+        %p 氏名
+        %p 誕生日
+        %p 性別
+        %p 所属
+      .profilePage_basic_content_data
+        %div
           = current_user.display_name
-        -# - if can? :read, @basic_profile
-        .profilePage_user_actionButton
-          = link_to 'Edit', edit_basic_profile_path
-      .profilePage_user_introduction
-        あああああああああああああああああああああああああああああ
+        %div
+          = l current_user.birthday, format: :middle
+        %div
+          #{I18n.t("enum.genders.#{current_user.gender}")}
+        %div{class: 'primary-color'}
+          #{I18n.t("enum.departments.#{current_user.department}")}
+      %div

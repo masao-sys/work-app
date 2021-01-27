@@ -1,6 +1,6 @@
 class BasicProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :if_not_admin, only: [:edit]
+  before_action :if_not_admin, only: [:edit, :update]
 
   def show
     @basic_profile = current_user.basic_profile
