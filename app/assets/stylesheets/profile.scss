@@ -7,9 +7,9 @@ $image_size: 56px;
 
   &_user {
     margin-bottom: 32px;
-    border: 1px solid #666;
     border-radius: 1em;
     overflow: hidden;
+    background-color: #FFF;
 
     &_icon {
 
@@ -70,4 +70,19 @@ $image_size: 56px;
       margin-bottom: 10px;
     }
   }
+  
+  &_title {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+      margin-left: 20px;
+      font-size: 12px;
+    }
+  }
+  
+  &_basic {
+    
+  }
+
 }
