@@ -18,12 +18,21 @@
     %h2 基本データ
     %span 基本データは管理者のみが編集可能な情報です。
   .profilePage_basic
-    %h3 基本情報
-    %p 氏名
-    = current_user.display_name
-    %p 誕生日
-    = l current_user.birthday, format: :middle
-    %p 性別
-    #{I18n.t("enum.genders.#{current_user.gender}")}
-    %p 所属
-    #{I18n.t("enum.departments.#{current_user.department}")}
+    .profilePage_basic_title
+      %h3 基本情報
+    .profilePage_basic_content
+      .profilePage_basic_content_type
+        %p 氏名
+        %p 誕生日
+        %p 性別
+        %p 所属
+      .profilePage_basic_content_data
+        %div
+          = current_user.display_name
+        %div
+          = l current_user.birthday, format: :middle
+        %div
+          #{I18n.t("enum.genders.#{current_user.gender}")}
+        %div{class: 'primary-color'}
+          #{I18n.t("enum.departments.#{current_user.department}")}
+      %div
