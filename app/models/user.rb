@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_one :basic_profile, dependent: :destroy
   has_one :custom_profile, dependent: :destroy
 
-  delegate :birthday, :gender, :department, to: :basic_profile, allow_nil: true
+  delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
   def display_name
     basic_profile&.name || self.email.split('@').first

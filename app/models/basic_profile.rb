@@ -19,4 +19,9 @@ class BasicProfile < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   enum department: { management: 0, sales: 1, peoduction: 2, development:3 }
   belongs_to :user
+
+  def bday
+    return '未入力' unless birthday.present?
+    birthday.strftime("%Y年%m月%d日")
+  end
 end
