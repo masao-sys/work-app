@@ -1,0 +1,20 @@
+.container
+  %ul
+    - @custom_profile.errors.full_messages.each do |message|
+      %li= message
+
+  = form_with(model: @custom_profile, url: custom_profile_path, method: 'put', local: true) do |f|
+    %div
+      = f.label :nickname, '氏名'
+    %div
+      = f.text_field :nickname, class: 'text'
+    %div
+      = f.label :birthplace, '居住地'
+    %div
+      = f.text_field :birthplace, class: 'text'
+    %div
+      = f.label :introduction, '自己紹介'
+    %div
+      = f.text_field :introduction, class: 'text'
+
+    = f.submit '保存', class: 'btn-primary'
