@@ -39,4 +39,20 @@ class User < ApplicationRecord
   def prepare_custom_profile
     custom_profile || build_custom_profile
   end
+
+  def avatar_image
+    if custom_profile&.avatar&.attached?
+      custom_profile.avatar
+    else
+      'default-avatar.png'
+    end
+  end
+
+  def background_image
+    if custom_profile&.background&.attached?
+      custom_profile.background
+    else
+      'l_e_others_500.png'
+    end
+  end
 end

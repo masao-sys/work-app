@@ -21,7 +21,9 @@ class CustomProfilesController < ApplicationController
     params.require(:custom_profile).permit(
       :nickname,
       :birthplace,
-      :introduction
+      :introduction,
+      :avatar,
+      :background
     )
   end
 end

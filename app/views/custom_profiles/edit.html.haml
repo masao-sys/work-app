@@ -5,7 +5,15 @@
 
   = form_with(model: @custom_profile, url: custom_profile_path, method: 'put', local: true) do |f|
     %div
-      = f.label :nickname, '氏名'
+      = f.label :avatar, 'アバター'
+    %div
+      = f.file_field :avatar
+    %div
+      = f.label :avatar, '背景'
+    %div
+      = f.file_field :background
+    %div
+      = f.label :nickname, 'ニックネーム'
     %div
       = f.text_field :nickname, class: 'text'
     %div
