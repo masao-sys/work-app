@@ -35,4 +35,8 @@ class User < ApplicationRecord
   def prepare_basic_profile
     basic_profile || build_basic_profile
   end
+
+  def prepare_custom_profile
+    custom_profile || build_custom_profile
+  end
 end

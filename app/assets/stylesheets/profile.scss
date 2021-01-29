@@ -82,10 +82,11 @@ $image_size: 56px;
     }
   }
   
-  &_basic {
+  &_wrap {
     border-radius: 1em;
     overflow: hidden;
     background-color: #FFF;
+    margin-bottom: 32px;
 
     &_title {
       border-bottom: 4px solid;
@@ -96,10 +97,10 @@ $image_size: 56px;
     &_content {
       display: flex;
       justify-content: space-between;
-
       padding: 20px 20px;
 
       &_type {
+        width: 40%;
         
         p {
           padding: 5px;
@@ -107,6 +108,7 @@ $image_size: 56px;
       }
 
       &_data {
+        width: 60%;
 
         div {
           padding: 5px;
@@ -116,6 +118,9 @@ $image_size: 56px;
           color: $primary-color;
         }
       }
+    }
+    &_introduction {
+      padding: 20px 20px;
     }
   }
 

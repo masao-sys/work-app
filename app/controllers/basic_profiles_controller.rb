@@ -4,6 +4,7 @@ class BasicProfilesController < ApplicationController
 
   def show
     @basic_profile = current_user.basic_profile
+    @custom_profile = current_user.custom_profile
   end
 
   def edit

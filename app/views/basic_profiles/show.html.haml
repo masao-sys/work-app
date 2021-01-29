@@ -17,16 +17,16 @@
   .profilePage_title
     %h2 基本データ
     %span 基本データは管理者のみが編集可能な情報です。
-  .profilePage_basic
-    .profilePage_basic_title
+  .profilePage_wrap
+    .profilePage_wrap_title
       %h3 基本情報
-    .profilePage_basic_content
-      .profilePage_basic_content_type
+    .profilePage_wrap_content
+      .profilePage_wrap_content_type
         %p 氏名
         %p 誕生日
         %p 性別
         %p 所属
-      .profilePage_basic_content_data
+      .profilePage_wrap_content_data
         %div
           = current_user.display_name
         %div
@@ -35,4 +35,23 @@
           #{I18n.t("enum.genders.#{current_user.gender || unknown}")}
         %div{class: 'primary-color'}
           #{I18n.t("enum.departments.#{current_user.department || unentered}")}
-      %div
+  
+  .profilePage_title
+    %h2 プロフィール
+  .profilePage_wrap
+    .profilePage_wrap_title
+      %h3 データ
+    .profilePage_wrap_content
+      .profilePage_wrap_content_type
+        %p ニックネーム
+        %p 居住地
+      .profilePage_wrap_content_data
+        %div
+          = @custom_profile.nickname
+        %div
+          = @custom_profile.birthplace
+  .profilePage_wrap
+    .profilePage_wrap_title
+      %h3 自己紹介
+    .profilePage_wrap_introduction
+      = @custom_profile.introduction
