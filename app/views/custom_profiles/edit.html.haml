@@ -4,20 +4,16 @@
       %li= message
   .profilePage_user
     .profilePage_user_icon
-      .profilePage_user_icon_background
+      .profilePage_user_icon_background_edit#background_preview
         = image_tag current_user.background_image
   .profilePage_user_edit#avatar_preview
     = image_tag current_user.avatar_image
 
   = form_with(model: @custom_profile, url: custom_profile_path, method: 'put', local: true) do |f|
-    %div
-      = f.label :avatar, 'アバター'
-    %div
+    %div{:hidden => ""}
       = f.file_field :avatar, id: 'avatar_file_field'
-    %div
-      = f.label :avatar, '背景'
-    %div
-      = f.file_field :background
+    %div{:hidden => ""}
+      = f.file_field :background, id: 'background_file_field'
     %div
       = f.label :nickname, 'ニックネーム'
     %div
