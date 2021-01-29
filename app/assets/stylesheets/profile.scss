@@ -37,6 +37,18 @@ $image_size: 56px;
       }
     }
 
+    &_edit {
+      display: flex;
+      justify-content: center;
+
+      img {
+        border-radius: 50%;
+        width: $image_size;
+        height: $image_size;
+        object-fit: cover;
+      }
+    }
+
     &_actionButton {
       display: flex;
       flex-direction: column;
