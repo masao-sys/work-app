@@ -9,7 +9,7 @@ class CustomProfilesController < ApplicationController
     @custom_profile = current_user.prepare_custom_profile
     @custom_profile.assign_attributes(custom_profile_params)
     if @custom_profile.save
-      redirect_to custom_profile_path, notice: 'プロフィール更新！'
+      redirect_to basic_profile_path, notice: 'プロフィール更新！'
     else
       flash.now[:error] = '更新できませんでした'
       render :edit
@@ -23,10 +23,5 @@ class CustomProfilesController < ApplicationController
       :birthplace,
       :introduction
     )
-  end
-
-  private
-  def if_not_admin
-    redirect_to root_path unless current_user.admin?
   end
 end
