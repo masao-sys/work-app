@@ -49,11 +49,11 @@
         %p 居住地
       .profilePage_wrap_content_data
         %div
-          = @custom_profile.nickname
+          = @custom_profile&.nickname
         %div
-          = @custom_profile.birthplace
+          = @custom_profile&.birthplace
   .profilePage_wrap
     .profilePage_wrap_title
       %h3 自己紹介
     .profilePage_wrap_introduction
-      = @custom_profile.introduction
+      = @custom_profile&.introduction
