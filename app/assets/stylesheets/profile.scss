@@ -20,6 +20,16 @@ $image_size: 56px;
           width: 100%;
           height: 200px;
         }
+
+        &_edit {
+          position: relative;
+        
+          img {
+            width: 100%;
+            height: 200px;
+            cursor: pointer;
+          }
+        }
       }
 
       &_image {
@@ -34,6 +44,19 @@ $image_size: 56px;
           object-fit: cover;
           border: 4px solid #FFF;
         }
+      }
+    }
+
+    &_edit {
+      width: $image_size;
+      margin: auto;
+
+      img {
+        border-radius: 50%;
+        width: $image_size;
+        height: $image_size;
+        object-fit: cover;
+        cursor: pointer;
       }
     }
 
