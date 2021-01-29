@@ -1,4 +1,7 @@
 class AccountsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :if_not_admin, only: [:edit, :update]
+
   def show
     @user = User.find(params[:id])
     if @user == current_user
@@ -31,5 +34,10 @@ class AccountsController < ApplicationController
       :gender,
       :department
     )
+  end
+
+  private
+  def if_not_admin
+    redirect_to root_path unless current_user.admin?
   end
 end

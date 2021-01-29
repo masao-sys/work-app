@@ -8,8 +8,9 @@
     .profilePage_user_name
       .profilePage_user_displayName
         = user.display_name
-      .profilePage_user_actionButton
-        = link_to 'Edit', edit_custom_profile_path
+      - if user == current_user
+        .profilePage_user_actionButton
+          = link_to 'Edit', edit_custom_profile_path
     .profilePage_user_department
       #{I18n.t("enum.departments.#{user.department || unentered}")}
   
