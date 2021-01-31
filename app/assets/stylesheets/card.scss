@@ -1,47 +1,65 @@
 @import './variables';
 
 $heart-size: 16px;
-$avatar-size: 32px;
+$avatar-size: 40px;
 
 .card {
-  background-color: white;
-  margin: 16px 0;
-  cursor: pointer;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 32px;
+  border-radius: 1em;
+  overflow: hidden;
+  background-color: #FFF;
 
-  &_heart {
-    display: flex;
-
-    img {
-      width: $heart-size;
-      height: $heart-size;
-    }
-
-    span {
-      margin-left: 8px;
-      font-size: 12px;
-      font-weight: bold;
-      color: $primary-color;
-      line-height: $heart-size;
-    }
+  &_wrap {
+    padding: 16px 16px;
   }
 
   &_detail {
-    padding-top: 12px;
-    cursor: pointer;
     display: flex;
+    align-items: center;
     font-size: 10px;
+    position: relative;
 
-    img {
-      width: $avatar-size;
-      height: $avatar-size;
-      border-radius: 100%;
-      margin-right: 8px;
+    &_image {
+
+      img {
+        width: $avatar-size;
+        height: $avatar-size;
+        border-radius: 100%;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &_user {
+
+      &_name {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &_create {
+
+      }
+    }
+
+    &_bookmark {
+      position: absolute;
+      right: 0;
+
+      img {
+        width: 24px;
+        height: 28px;
+        cursor: pointer;
+      }
     }
   }
 
+  &_title {
+    margin-top: 10px;
+  }
+
   &_content {
-    padding: 16px 16px;
+    margin-top: 10px;
   }
 
   &_image {
@@ -57,6 +75,22 @@ $avatar-size: 32px;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       width: 100%;
+    }
+  }
+
+  &_read {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 4px solid;
+    border-color: $base-bg-color;
+    font-size: 14px;
+
+    &_count {
+      font-weight: bold;
+      color: $primary-color;
+      cursor: pointer;
     }
   }
 }

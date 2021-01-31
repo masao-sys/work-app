@@ -1,0 +1,22 @@
+.container
+  - @informations.each do |information|
+    .card
+      .card_wrap
+        .card_detail
+          .card_detail_image
+            = image_tag information.user.avatar_image
+          .card_detail_user
+            .card_detail_user_name
+              %p= information.author_name
+            .card_detail_user_create
+              %p= information.display_created_at
+          .card_detail_bookmark
+            = image_tag 'bookmark.png'
+        .card_title
+          = information.title
+        .card_content
+          = information.content
+        .card_read
+          .card_read_count
+            %p 10人
+          %p が既読
