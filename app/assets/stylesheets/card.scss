@@ -17,13 +17,17 @@ $avatar-size: 40px;
     display: flex;
     align-items: center;
     font-size: 10px;
+    position: relative;
 
-    img {
-      width: $avatar-size;
-      height: $avatar-size;
-      border-radius: 100%;
-      margin-right: 8px;
-    cursor: pointer;
+    &_image {
+
+      img {
+        width: $avatar-size;
+        height: $avatar-size;
+        border-radius: 100%;
+        margin-right: 8px;
+        cursor: pointer;
+      }
     }
 
     &_user {
@@ -35,6 +39,17 @@ $avatar-size: 40px;
 
       &_create {
 
+      }
+    }
+
+    &_bookmark {
+      position: absolute;
+      right: 0;
+
+      img {
+        width: 24px;
+        height: 28px;
+        cursor: pointer;
       }
     }
   }
@@ -60,6 +75,22 @@ $avatar-size: 40px;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       width: 100%;
+    }
+  }
+
+  &_read {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 4px solid;
+    border-color: $base-bg-color;
+    font-size: 14px;
+
+    &_count {
+      font-weight: bold;
+      color: $primary-color;
+      cursor: pointer;
     }
   }
 }
