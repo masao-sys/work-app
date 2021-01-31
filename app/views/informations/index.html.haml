@@ -1,0 +1,15 @@
+.container
+  - @informations.each do |information|
+    .card
+      .card_wrap
+        .card_detail
+          = image_tag information.user.avatar_image
+          .card_detail_user
+            .card_detail_user_name
+              %p= information.author_name
+            .card_detail_user_create
+              %p= information.display_created_at
+        .card_title
+          = information.title
+        .card_content
+          = information.content
