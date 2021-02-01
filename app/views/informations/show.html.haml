@@ -1,0 +1,17 @@
+.container
+  .information
+    .information_wrap
+      .information_detail
+        .information_detail_image
+          = image_tag @information.user.avatar_image
+        .information_detail_user
+          .information_detail_user_name
+            %p= @information.author_name
+          .information_detail_user_create
+            %p= @information.display_created_at
+        .card_detail_bookmark
+          = image_tag 'bookmark.png'
+      .information_title
+        = @information.title
+      .information_content
+        = @information.content

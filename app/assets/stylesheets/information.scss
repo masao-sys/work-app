@@ -1,0 +1,96 @@
+@import 'variables';
+
+$heart-size: 32px;
+$avatar-size: 40px;
+
+.information {
+    margin-bottom: 32px;
+    border-radius: 1em;
+    overflow: hidden;
+    background-color: #FFF;
+  
+    &_wrap {
+      padding: 16px 16px;
+    }
+  
+    &_detail {
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      position: relative;
+  
+      &_image {
+  
+        img {
+          width: $avatar-size;
+          height: $avatar-size;
+          border-radius: 100%;
+          margin-right: 8px;
+          cursor: pointer;
+        }
+      }
+  
+      &_user {
+  
+        &_name {
+          font-size: 14px;
+          font-weight: bold;
+        }
+  
+        &_create {
+  
+        }
+      }
+  
+      &_bookmark {
+        position: absolute;
+        right: 0;
+  
+        img {
+          width: 24px;
+          height: 28px;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    &_title {
+      margin-top: 10px;
+    }
+  
+    &_content {
+      margin-top: 10px;
+    }
+  
+    &_image {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+  
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+    }
+  
+    &_read {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 4px solid;
+      border-color: $base-bg-color;
+      font-size: 14px;
+  
+      &_count {
+        font-weight: bold;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
