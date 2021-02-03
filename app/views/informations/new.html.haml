@@ -1,4 +1,8 @@
 .container
+  %ul
+    - @information.errors.full_messages.each do |message|
+      %li= message
+
   = form_with(model: @information, url: informations_path, method: 'post', local: true) do |f|
     %div
       = f.label :title, '連絡事項'
