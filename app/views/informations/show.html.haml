@@ -10,8 +10,14 @@
             %p= @information.author_name
           .information_detail_user_create
             %p= @information.display_created_at
-        .card_detail_bookmark
-          = image_tag 'bookmark.png'
+        .information_detail_actions
+          .information_detail_actions_dorpdown
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropbtn'
+              .dropdown-content.mini
+                %a 編集する
+          .information_detail_actions_bookmark
+            = image_tag 'bookmark.png'
       .information_title
         = @information.title
       .information_content

@@ -42,14 +42,22 @@ $avatar-size: 40px;
         }
       }
   
-      &_bookmark {
+      &_actions {
+        display: flex;
+        right: 0px;
         position: absolute;
-        right: 0;
-  
-        img {
-          width: 24px;
-          height: 28px;
-          cursor: pointer;
+
+        &_dorpdown {
+          margin-right: 10px;
+        }
+
+        &_bookmark {
+    
+          img {
+            width: 24px;
+            height: 28px;
+            cursor: pointer;
+          }
         }
       }
     }
