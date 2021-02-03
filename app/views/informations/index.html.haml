@@ -16,6 +16,10 @@
           = information.title
         .card_content
           = information.content
+        = link_to information_path(information) do
+          .card_display
+            .card_display_button
+              %p 詳細を表示
         .card_read
           .card_read_count
             %p 10人

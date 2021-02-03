@@ -83,10 +83,34 @@ $avatar-size: 40px;
       justify-content: flex-end;
       margin-top: 10px;
       padding-top: 10px;
+      font-size: 14px;
+      cursor: pointer;
+
+      &_readButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 18px;
+        border-radius: 4px;
+        border: 1px solid $primary-color;
+        font-weight: bold;
+        padding: 0px 8px;
+    
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &_userRead {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 4px solid;
       border-color: $base-bg-color;
       font-size: 14px;
-  
+
       &_count {
         font-weight: bold;
         color: $primary-color;
