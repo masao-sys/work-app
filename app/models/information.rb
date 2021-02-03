@@ -14,6 +14,9 @@
 #  index_information_on_user_id  (user_id)
 #
 class Information < ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
+
   belongs_to :user
 
   def display_created_at

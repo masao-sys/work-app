@@ -1,10 +1,16 @@
 .container
+  - if can? :read, @information
+    .create
+      = link_to new_information_path do
+        .create_button
+          %p ＋全体連絡作成
   - @informations.each do |information|
     .card
       .card_wrap
         .card_detail
           .card_detail_image
-            = image_tag information.user.avatar_image
+            = link_to account_path(information.user) do
+              = image_tag information.user.avatar_image
           .card_detail_user
             .card_detail_user_name
               %p= information.author_name
@@ -16,8 +22,8 @@
           = information.title
         .card_content
           = information.content
-        = link_to information_path(information) do
-          .card_display
+        .card_display
+          = link_to information_path(information) do
             .card_display_button
               %p 詳細を表示
         .card_read
