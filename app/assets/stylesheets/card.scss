@@ -78,6 +78,28 @@ $avatar-size: 40px;
     }
   }
 
+  &_display {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding-top: 10px;
+
+    &_button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 14px;
+      border-radius: 15px;
+      border: 1px solid $primary-color;
+      font-weight: bold;
+      padding: 0px 8px;
+
+      p {
+        color: $primary-color;
+      }
+    }
+  }
+
   &_read {
     display: flex;
     justify-content: flex-end;

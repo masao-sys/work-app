@@ -1,0 +1,25 @@
+.container
+  .information
+    .information_wrap
+      .information_detail
+        .information_detail_image
+          = link_to account_path(@information.user) do
+            = image_tag @information.user.avatar_image
+        .information_detail_user
+          .information_detail_user_name
+            %p= @information.author_name
+          .information_detail_user_create
+            %p= @information.display_created_at
+        .card_detail_bookmark
+          = image_tag 'bookmark.png'
+      .information_title
+        = @information.title
+      .information_content
+        = @information.content
+      .information_read
+        .information_read_readButton
+          %a 既読
+      .information_userRead
+        .information_userRead_count
+          %p 10人
+        %p が既読

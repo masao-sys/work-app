@@ -10,7 +10,7 @@
         = user.display_name
       - if user == current_user
         .profilePage_user_actionButton
-          = link_to 'Edit', edit_custom_profile_path
+          = link_to '編集', edit_custom_profile_path
     .profilePage_user_department
       #{I18n.t("enum.departments.#{user.department || unentered}")}
   
@@ -18,8 +18,12 @@
     %h2 基本データ
     %span 基本データは管理者のみが編集可能な情報です。
     - if can? :read, @basic_profile
-      .profilePage_adminButton
-        = link_to 'Edit', edit_account_path
+      - if user == current_user
+        .profilePage_adminButton
+          = link_to '編集', edit_basic_profile_path
+      - else
+        .profilePage_adminButton
+          = link_to '編集', edit_account_path
   .profilePage_wrap
     .profilePage_wrap_title
       %h3 基本情報
