@@ -38,6 +38,6 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:title, :content)
+    params.require(:information).permit(:title, :content, images: [])
   end
 end

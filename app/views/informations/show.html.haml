@@ -18,6 +18,9 @@
                 = link_to '編集する', edit_information_path(@information)
           .information_detail_actions_bookmark
             = image_tag 'bookmark.png'
+      - if @information.images.attached?
+        .information_image
+          = image_tag @information.images.first
       .information_title
         = @information.title
       .information_content
