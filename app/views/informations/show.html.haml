@@ -15,7 +15,7 @@
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'
               .dropdown-content.mini
-                %a 編集する
+                = link_to '編集する', edit_information_path(@information)
           .information_detail_actions_bookmark
             = image_tag 'bookmark.png'
       .information_title
