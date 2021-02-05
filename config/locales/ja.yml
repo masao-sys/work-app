@@ -10,6 +10,7 @@ ja:
       information:
         title: 'タイトル'
         content: '内容'
+        images: '写真'
   date:
     abbr_day_names:
     - 日

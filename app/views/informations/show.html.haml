@@ -10,8 +10,33 @@
             %p= @information.author_name
           .information_detail_user_create
             %p= @information.display_created_at
-        .card_detail_bookmark
-          = image_tag 'bookmark.png'
+        .information_detail_actions
+          .information_detail_actions_dorpdown
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropbtn'
+              .dropdown-content.mini
+                = link_to '編集する', edit_information_path(@information)
+          .information_detail_actions_bookmark
+            = image_tag 'bookmark.png'
+      - if @information.images.attached?
+        - if @information.images.first && @information.images.second && @information.images.third #写真枚数で表示変更
+          .information_image_three
+            .information_image_three_first
+              = image_tag @information.images.first
+            .information_image_three_second
+              = image_tag @information.images.second
+            .information_image_three_third
+              = image_tag @information.images.third
+        - elsif @information.images.first && @information.images.second
+          .information_image_two
+            .information_image_two_first
+              = image_tag @information.images.first
+            .information_image_two_second
+              = image_tag @information.images.second
+        - else @information.images.first
+          .information_image_one
+            .information_image_one_first
+              = image_tag @information.images.first
       .information_title
         = @information.title
       .information_content

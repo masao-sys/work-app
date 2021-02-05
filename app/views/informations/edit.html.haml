@@ -3,7 +3,7 @@
     - @information.errors.full_messages.each do |message|
       %li= message
 
-  = form_with(model: @information, url: informations_path, method: 'post', local: true) do |f|
+  = form_with(model: @information, url: information_path(@information), method: 'put', local: true) do |f|
     %div
       = f.label :images, '画像'
     %div

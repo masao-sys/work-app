@@ -16,8 +16,17 @@
 class Information < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
+  validate :images_presence
+
+  has_many_attached :images
 
   belongs_to :user
+
+  def images_presence
+    if images.count >= 4
+      errors.add(:images, 'は3つまで指定できます')
+    end
+  end
 
   def display_created_at
     I18n.l(self.created_at, format: :default)
