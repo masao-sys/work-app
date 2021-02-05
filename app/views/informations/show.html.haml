@@ -19,8 +19,21 @@
           .information_detail_actions_bookmark
             = image_tag 'bookmark.png'
       - if @information.images.attached?
-        .information_image
-          = image_tag @information.images.first
+        - if @information.images.first && @information.images.second && @information.images.third #写真枚数で表示変更
+          .information_image
+            = image_tag @information.images.first
+          .information_image
+            = image_tag @information.images.second
+          .information_image
+            = image_tag @information.images.third
+        - elsif @information.images.first && @information.images.second
+          .information_image
+            = image_tag @information.images.first
+          .information_image
+            = image_tag @information.images.second
+        - else @information.images.first
+          .information_image
+            = image_tag @information.images.first
       .information_title
         = @information.title
       .information_content
