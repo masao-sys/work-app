@@ -36,6 +36,12 @@ class InformationsController < ApplicationController
     end
   end
 
+  def destroy
+    information = current_user.informations.find(params[:id])
+    information.destroy!
+    redirect_to root_path, notice: '削除に成功しました'
+  end
+
   private
   def information_params
     params.require(:information).permit(:title, :content, images: [])

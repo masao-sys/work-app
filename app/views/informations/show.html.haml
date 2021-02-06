@@ -16,6 +16,7 @@
               = image_tag 'actions.svg', class: 'dropbtn'
               .dropdown-content.mini
                 = link_to '編集する', edit_information_path(@information)
+                = link_to '削除する', information_path(@information), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
           .information_detail_actions_bookmark
             = image_tag 'bookmark.png'
       - if @information.images.attached?
