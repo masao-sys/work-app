@@ -1,4 +1,6 @@
 class InformationsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :if_not_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @informations = Information.all.order(created_at: :desc)
@@ -45,5 +47,10 @@ class InformationsController < ApplicationController
   private
   def information_params
     params.require(:information).permit(:title, :content, images: [])
+  end
+
+  private
+  def if_not_admin
+    redirect_to root_path unless current_user.admin?
   end
 end
