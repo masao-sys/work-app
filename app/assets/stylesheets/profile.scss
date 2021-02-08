@@ -1,9 +1,13 @@
 @import './variables';
 
-$image_size: 56px;
+$image_size: 80px;
+
+.profile {
+  padding-top: 16px;
+  padding-left: 16px;
+}
 
 .profilePage {
-  margin-top: 24px;
 
   &_user {
     margin-bottom: 32px;
@@ -34,7 +38,7 @@ $image_size: 56px;
 
       &_image {
         position: absolute;
-        top: 83%;
+        top: 77%;
         left: 10%;
 
         img {
@@ -64,13 +68,11 @@ $image_size: 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font-size: 12px;
+      font-size: 20px;
       border-radius: 4px;
-      border: 1px solid $primary-color;
+      border: 2px solid $primary-color;
       font-weight: bold;
       padding: 0px 8px;
-      position: absolute;
-      right: 20%;
 
       a {
         color: $primary-color;
@@ -100,9 +102,9 @@ $image_size: 56px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 12px;
+    font-size: 20px;
     border-radius: 4px;
-    border: 1px solid $primary-color;
+    border: 2px solid $primary-color;
     font-weight: bold;
     padding: 0px 8px;
 
@@ -114,11 +116,11 @@ $image_size: 56px;
   &_title {
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     font-size: 18px;
     margin-bottom: 10px;
 
     span {
-      margin-left: 20px;
       font-size: 12px;
     }
   }
