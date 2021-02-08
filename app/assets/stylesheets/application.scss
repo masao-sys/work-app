@@ -31,6 +31,9 @@ body {
   background-color: $base-bg-color;
   font-size: 1em;
   color: $text-base-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -38,11 +41,34 @@ a {
   color: $text-base-color;
 }
 
+.wrap {
+  width: 1300px;
+  margin: auto;
+  display: flex;
+  flex: 1;
+}
+
+.profile {
+  width: 350px;
+}
+
+.main {
+  flex: 1;
+}
+
+.aside {
+  width: 350px;
+}
+
 .container {
   padding: 16px 16px;
-  max-width: 800px;
-  margin: auto;
   width: 100%;
+
+  &_form {
+    padding: 16px 16px;
+    width: 600px;
+    margin: 0 auto;
+  }
 
   &_min {
     width: 100%;
