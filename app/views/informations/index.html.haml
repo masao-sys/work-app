@@ -32,6 +32,14 @@
                   %p= information.display_created_at
               .card_detail_bookmark
                 = image_tag 'bookmark.png'
+              - if current_user.has_bookmark?(information)
+                .card_detail_bookmark
+                  = link_to information_bookmark_path(information), data: { method: 'delete' } do
+                    = image_tag 'active-bookmark.png'
+              - else
+                .card_detail_bookmark
+                  = link_to information_bookmark_path(information), data: { method: 'post' } do
+                    = image_tag 'bookmark.png'
             .card_title
               = information.title
             .card_content
