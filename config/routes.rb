@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'informations#index'
 
-  resources :informations, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :informations do
+    resource :bookmark, only: [:create, :destroy]
+  end
 
   resource :basic_profile, only: [:show, :edit, :update]
   resource :custom_profile, only: [:edit, :update]

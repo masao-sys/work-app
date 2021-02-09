@@ -30,6 +30,10 @@ class User < ApplicationRecord
 
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
+  def has_bookmark?(information)
+    bookmarks.exists?(information: information.id)
+  end
+
   def display_name
     basic_profile&.name || self.email.split('@').first
   end
