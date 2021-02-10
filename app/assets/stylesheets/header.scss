@@ -4,11 +4,16 @@ $avatar-size: 40px;
 $header-padding-y: 16px;
 
 .header {
-  display: flex;
-  justify-content: space-between;
   background-color: $primary-color;
   padding: $header-padding-y 16px;
   font-weight: bold;
+
+  &_width {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
 
   &_loginBtn {
     background-color: $base-bg-color;

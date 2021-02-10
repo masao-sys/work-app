@@ -11,11 +11,6 @@
           = current_user.display_name
       .profilePage_user_department
         #{I18n.t("enum.departments.#{current_user.department || unentered}")}
-    - if can? :read, @information
-      .create
-        = link_to new_information_path do
-          .create_button
-            %p ＋全体連絡作成
     .side
       = link_to favorites_path do
         .side_menu
@@ -25,6 +20,8 @@
             %p ブックマーク
   .main
     .container
+      .pageTitle
+        %h2 ブックマーク
       - @informations.each do |information|
         .card
           .card_wrap

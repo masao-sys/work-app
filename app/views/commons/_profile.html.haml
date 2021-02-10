@@ -11,6 +11,13 @@
           = current_user.display_name
       .profilePage_user_department
         #{I18n.t("enum.departments.#{current_user.department || unentered}")}
+    .side
+      = link_to favorites_path do
+        .side_menu
+          .side_menu_image
+            = image_tag 'tag.png'
+          .side_menu_text
+            %p ブックマーク
   .main
     .container.profilePage
       .profilePage_title

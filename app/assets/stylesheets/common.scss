@@ -38,3 +38,38 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.pageTitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.side {
+  border-radius: 1em;
+  overflow: hidden;
+  background-color: #FFF;
+
+    &_menu {
+      display: flex;
+      margin: 20px;
+      align-items: center;
+      
+      &_image {
+        border-radius: 1em;
+        overflow: hidden;
+
+        img {
+          vertical-align: middle;
+          width: 64px;
+          height: 64px;
+          object-fit: cover;
+        }
+      }
+
+      &_text {
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+}
