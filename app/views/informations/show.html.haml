@@ -20,7 +20,7 @@
             %p ブックマーク
   .main
     .container
-      .information
+      .information#information-show{data: {information_id: @information.id}}
         .information_wrap
           .information_detail
             .information_detail_image
@@ -77,3 +77,5 @@
               %p 10人
             %p が既読
   .aside
+
+= javascript_pack_tag 'bookmark'

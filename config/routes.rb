@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'informations#index'
 
   resources :informations do
-    resource :bookmark, only: [:create, :destroy]
+    resource :bookmark, only: [:show, :create, :destroy]
   end
 
   resources :favorites, only: [:index]
