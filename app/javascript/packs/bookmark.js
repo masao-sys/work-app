@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const informationId = dataset.informationId
   axios.get(`/informations/${informationId}/bookmark`)
     .then((response) => {
-      console.log(response)
+      const hasBookmark = response.data.hasBookmark
+      if (hasBookmark) {
+        $('.active-bookmark').removeClass('hidden')
+      } else {
+        $('.inactive-bookmark').removeClass('hidden')
+      }
     })
 })
