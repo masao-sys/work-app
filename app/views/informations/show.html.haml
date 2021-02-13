@@ -20,7 +20,7 @@
             %p ブックマーク
   .main
     .container
-      .information
+      .information#information-show{data: {information_id: @information.id}}
         .information_wrap
           .information_detail
             .information_detail_image
@@ -38,14 +38,10 @@
                   .dropdown-content.mini
                     = link_to '編集する', edit_information_path(@information)
                     = link_to '削除する', information_path(@information), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-              - if current_user.has_bookmark?(@information)
-                .information_detail_actions_bookmark
-                  = link_to information_bookmark_path(@information), data: { method: 'delete' } do
-                    = image_tag 'active-bookmark.png'
-              - else
-                .information_detail_actions_bookmark
-                  = link_to information_bookmark_path(@information), data: { method: 'post' } do
-                    = image_tag 'bookmark.png'
+              .information_detail_actions_bookmark.hidden.active-bookmark
+                = image_tag 'active-bookmark.png'
+              .information_detail_actions_bookmark.hidden.inactive-bookmark
+                = image_tag 'bookmark.png'
           - if @information.images.attached?
             - if @information.images.first && @information.images.second && @information.images.third #写真枚数で表示変更
               .information_image_three
@@ -77,3 +73,5 @@
               %p 10人
             %p が既読
   .aside
+
+= javascript_pack_tag 'bookmark_show'
