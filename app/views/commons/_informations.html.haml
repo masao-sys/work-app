@@ -1,0 +1,36 @@
+.card#information-index{data: {information_id: information.id}}
+  .card_wrap
+    .card_detail
+      .card_detail_image
+        = link_to account_path(information.user) do
+          = image_tag information.user.avatar_image
+      .card_detail_user
+        .card_detail_user_name
+          %p= information.author_name
+        .card_detail_user_create
+          %p= information.display_created_at
+      .card_detail_bookmark
+        = image_tag 'bookmark.png'
+      - if current_user.has_bookmark?(information)
+        .card_detail_bookmark.active-bookmark{class: "#{information.id}", id: "#{information.id}"}
+          = image_tag 'active-bookmark.png'
+        .card_detail_bookmark.hidden.inactive-bookmark{class: "#{information.id}", id: "#{information.id}"}
+          = image_tag 'bookmark.png'
+      - else
+        .card_detail_bookmark.inactive-bookmark{class: "#{information.id}", id: "#{information.id}"}
+          = image_tag 'bookmark.png'
+        .card_detail_bookmark.hidden.active-bookmark{class: "#{information.id}", id: "#{information.id}"}
+          = image_tag 'active-bookmark.png'
+    .card_title
+      = information.title
+    .card_content
+      = information.content
+    .card_display
+      = link_to information_path(information) do
+        .card_display_button
+          %p 詳細を表示
+    .card_read
+      .card_read_count
+        %p 10人
+      %p が既読
+      

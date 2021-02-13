@@ -1,59 +1,11 @@
 .wrap
-  .profile
-    .profilePage_user
-      .profilePage_user_icon
-        .profilePage_user_icon_background
-          = image_tag current_user.background_image
-          .profilePage_user_icon_image
-            = image_tag current_user.avatar_image
-      .profilePage_user_name
-        .profilePage_user_displayName
-          = current_user.display_name
-      .profilePage_user_department
-        #{I18n.t("enum.departments.#{current_user.department || unentered}")}
-    .side
-      = link_to favorites_path do
-        .side_menu
-          .side_menu_image
-            = image_tag 'tag.png'
-          .side_menu_text
-            %p ブックマーク
+  = render 'commons/profile_image', user: current_user
   .main
     .container
       .pageTitle
         %h2 ブックマーク
       - @informations.each do |information|
-        .card
-          .card_wrap
-            .card_detail
-              .card_detail_image
-                = link_to account_path(information.user) do
-                  = image_tag information.user.avatar_image
-              .card_detail_user
-                .card_detail_user_name
-                  %p= information.author_name
-                .card_detail_user_create
-                  %p= information.display_created_at
-              .card_detail_bookmark
-                = image_tag 'bookmark.png'
-              - if current_user.has_bookmark?(information)
-                .card_detail_bookmark
-                  = link_to information_bookmark_path(information), data: { method: 'delete' } do
-                    = image_tag 'active-bookmark.png'
-              - else
-                .card_detail_bookmark
-                  = link_to information_bookmark_path(information), data: { method: 'post' } do
-                    = image_tag 'bookmark.png'
-            .card_title
-              = information.title
-            .card_content
-              = information.content
-            .card_display
-              = link_to information_path(information) do
-                .card_display_button
-                  %p 詳細を表示
-            .card_read
-              .card_read_count
-                %p 10人
-              %p が既読
+        = render 'commons/informations', information: information
   .aside
+
+= javascript_pack_tag 'bookmark_index'
