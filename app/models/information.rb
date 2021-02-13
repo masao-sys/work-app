@@ -22,6 +22,7 @@ class Information < ApplicationRecord
 
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
+  has_many :reads, dependent: :destroy
 
   def images_presence
     if images.count >= 4
