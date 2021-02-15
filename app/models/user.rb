@@ -36,6 +36,10 @@ class User < ApplicationRecord
     bookmarks.exists?(information: information.id)
   end
 
+  def has_read?(information)
+    reads.exists?(information: information.id)
+  end
+
   def display_name
     basic_profile&.name || self.email.split('@').first
   end

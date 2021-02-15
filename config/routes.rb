@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :informations do
     resource :bookmark, only: [:show, :create, :destroy]
+    resource :read, only: [:show, :create, :destroy]
   end
 
   resources :favorites, only: [:index]
