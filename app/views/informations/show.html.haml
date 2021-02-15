@@ -72,8 +72,11 @@
               %a 既読
           .information_userRead
             .information_userRead_count
-              %p 10人
+              %p= @information.read_count
+            .information_userRead_text
+              %p 人
             %p が既読
   .aside
 
 = javascript_pack_tag 'bookmark_show'
+= javascript_pack_tag 'read'

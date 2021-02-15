@@ -198,5 +198,11 @@ $avatar-size: 40px;
         color: $primary-color;
         cursor: pointer;
       }
+
+      &_text {
+        font-weight: bold;
+        color: $primary-color;
+        cursor: pointer;
+      }
     }
   }

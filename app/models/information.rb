@@ -37,4 +37,8 @@ class Information < ApplicationRecord
   def author_name
     user.display_name
   end
+
+  def read_count
+    reads.count
+  end
 end
