@@ -4,12 +4,13 @@
       .profilePage_user_icon_background
         = image_tag user.background_image
         .profilePage_user_icon_image
-          = image_tag user.avatar_image
+          = link_to account_path(user) do
+            = image_tag user.avatar_image
     .profilePage_user_name
       .profilePage_user_displayName
         = user.display_name
     .profilePage_user_department
-      #{I18n.t("enum.departments.#{user.department || unentered}")}
+      #{I18n.t("enum.departments.#{user.department || 'unentered'}")}
   .side
     = link_to favorites_path do
       .side_menu
