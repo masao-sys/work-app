@@ -1,0 +1,52 @@
+@import 'variables';
+
+$avatar-size: 50px;
+
+.flex_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.already {
+  width: 48%;
+  background-color: #FFF;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 1em;
+
+  &_detail {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    position: relative;
+
+
+    &_image {
+
+      img {
+        width: $avatar-size;
+        height: $avatar-size;
+        border-radius: 100%;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &_user {
+      margin: auto;
+      align-items: center;
+      text-align: center;
+
+      &_name {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &_department {
+        font-size: 14px;
+        font-weight: bold;
+        color: $primary-color;
+      }
+    }
+  }
+}

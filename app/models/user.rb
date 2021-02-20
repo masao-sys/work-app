@@ -27,12 +27,17 @@ class User < ApplicationRecord
   has_one :custom_profile, dependent: :destroy
   has_many :informations, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :reads, dependent: :destroy
   has_many :favorite_informations, through: :bookmarks, source: :information
 
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
   def has_bookmark?(information)
     bookmarks.exists?(information: information.id)
+  end
+
+  def has_read?(information)
+    reads.exists?(information: information.id)
   end
 
   def display_name

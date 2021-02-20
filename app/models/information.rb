@@ -22,6 +22,8 @@ class Information < ApplicationRecord
 
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
+  has_many :reads, dependent: :destroy
+  has_many :read_user, through: :reads, source: :user
 
   def images_presence
     if images.count >= 4
@@ -35,5 +37,9 @@ class Information < ApplicationRecord
 
   def author_name
     user.display_name
+  end
+
+  def read_count
+    reads.count
   end
 end
