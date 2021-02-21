@@ -17,7 +17,7 @@
 #
 class BasicProfile < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
-  enum department: { management: 0, sales: 1, peoduction: 2, development:3 }
+  enum department: { management: 0, sales: 1, production: 2, development:3 }
   belongs_to :user
 
   def bday
