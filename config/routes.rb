@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     resource :read, only: [:show, :create, :destroy]
     resources :alreadys, only: [:index]
   end
+  resources :favorites, only: [:index]
 
   resources :departments, only: [:index]
-
-  resources :favorites, only: [:index]
+  resources :managements, only: [:index]
 
   resource :basic_profile, only: [:show, :edit, :update]
   resource :custom_profile, only: [:edit, :update]
