@@ -14,6 +14,8 @@
       .header_width
         %p.header_pageTitle
           = link_to 'WORK APP', root_path
+        %p.header_pageTitle
+          = link_to '組織', departments_path
         - if user_signed_in?
           .dropdown
             = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'

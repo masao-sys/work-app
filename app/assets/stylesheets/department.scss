@@ -1,0 +1,53 @@
+@import './variables';
+
+.department {
+  width:48%;
+  margin: 5px;
+
+  &_user {
+    margin-bottom: 15px;
+    border-radius: 1em;
+    overflow: hidden;
+    background-color: #FFF;
+
+    &_icon {
+
+      &_background {
+        position: relative;
+        
+        img {
+          width: 100%;
+          height: 200px;
+        }
+
+        &_edit {
+          position: relative;
+        
+          img {
+            width: 100%;
+            height: 200px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &_name {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    &_displayName {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &_count {
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  }
+}

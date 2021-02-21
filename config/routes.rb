@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :alreadys, only: [:index]
   end
 
+  resources :departments, only: [:index]
+
   resources :favorites, only: [:index]
 
   resource :basic_profile, only: [:show, :edit, :update]
