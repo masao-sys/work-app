@@ -29,6 +29,7 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :reads, dependent: :destroy
   has_many :favorite_informations, through: :bookmarks, source: :information
+  has_many :managements, dependent: :destroy
 
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
