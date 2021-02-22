@@ -9,8 +9,6 @@
           %p= information.author_name
         .card_detail_user_create
           %p= information.display_created_at
-      .card_detail_bookmark
-        = image_tag 'bookmark.png'
       - if current_user.has_bookmark?(information)
         .card_detail_bookmark.active-bookmark{class: "#{information.id}", id: "#{information.id}"}
           = image_tag 'active-bookmark.png'

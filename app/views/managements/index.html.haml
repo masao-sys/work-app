@@ -1,3 +1,32 @@
-index
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      .pageTitle
+        %h2 経営陣
+      - @managements.each do |management|
+        .card
+          .card_wrap
+            .card_detail
+              .card_detail_image
+                = link_to account_path(management.user) do
+                  = image_tag management.user.avatar_image
+              .card_detail_user
+                .card_detail_user_name
+                  %p= management.author_name
+                .card_detail_user_create
+                  %p= management.display_created_at
+              - if current_user.department == 'management'
+                .card_detail_bookmark
+                  = image_tag 'bookmark.png'
+            .card_title
+              = management.title
+            .card_content
+              = management.content
+            .card_display
+              .card_display_button
+                %p 詳細を表示
+        
+  .aside
 - if current_user.department == 'management'
   %p 経営陣
