@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
 
   resources :departments, only: [:index]
-  resources :managements, only: [:index]
+  resources :managements, only: [:index, :show]
 
   resource :basic_profile, only: [:show, :edit, :update]
   resource :custom_profile, only: [:edit, :update]

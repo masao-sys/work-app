@@ -6,6 +6,11 @@ class ManagementsController < ApplicationController
     @managements = Management.all.order(created_at: :desc)
   end
 
+  def show
+    @management = Management.find(params[:id])
+  end
+
+
   private
   def if_not_management
     redirect_to root_path unless current_user.department == 'management'

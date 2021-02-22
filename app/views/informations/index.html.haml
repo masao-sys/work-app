@@ -2,6 +2,8 @@
   = render 'commons/profile_image', user: current_user
   .main
     .container
+      .pageTitle
+        %h2 全体連絡
       - @informations.each do |information|
         = render 'commons/informations', information: information
   .aside

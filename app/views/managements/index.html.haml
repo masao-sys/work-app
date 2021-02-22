@@ -24,8 +24,9 @@
             .card_content
               = management.content
             .card_display
-              .card_display_button
-                %p 詳細を表示
+              = link_to management_path(management) do
+                .card_display_button
+                  %p 詳細を表示
         
   .aside
 - if current_user.department == 'management'
