@@ -3,7 +3,7 @@ ja:
     departments:
       management: '経営部'
       sales: '営業部'
-      peoduction: '製造部'
+      production: '製造部'
       development: '開発部'
       unentered: '未入力'
     genders:

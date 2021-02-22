@@ -5,15 +5,16 @@
         %h2 組織
       .flex_wrap
         .department
-          .department_user
-            .department_user_icon
-              .department_user_icon_background
-                = image_tag 'office-1516329__340.webp'
-            .department_user_name
-              .department_user_displayName
-                %p 経営陣
-            .department_user_count
-              %p メンバー６人
+          = link_to managements_path do
+            .department_user
+              .department_user_icon
+                .department_user_icon_background
+                  = image_tag 'office-1516329__340.webp'
+              .department_user_name
+                .department_user_displayName
+                  %p 経営陣
+              .department_user_count
+                %p メンバー６人
         .department
           .department_user
             .department_user_icon
