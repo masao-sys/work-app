@@ -7,9 +7,9 @@ class ManagementsController < ApplicationController
   end
 
   def show
-    
+    @management = Management.find(params[:id])
   end
-  
+
 
   private
   def if_not_management

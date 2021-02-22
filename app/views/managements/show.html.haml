@@ -1,1 +1,52 @@
-show
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      .pageTitle
+        %h2 経営陣
+      .information
+        .information_wrap
+          .information_detail
+            .information_detail_image
+              = link_to account_path(@management.user) do
+                = image_tag @management.user.avatar_image
+            .information_detail_user
+              .information_detail_user_name
+                %p= @management.author_name
+              .information_detail_user_create
+                %p= @management.display_created_at
+            .information_detail_actions
+              .information_detail_actions_dorpdown
+                .dropdown
+                  = image_tag 'actions.svg', class: 'dropbtn'
+                  .dropdown-content.mini
+                    = link_to '編集する', edit_information_path(@management)
+                    = link_to '削除する', information_path(@management), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+              .information_detail_actions_bookmark
+                = image_tag 'active-bookmark.png'
+              .information_detail_actions_bookmark.hidden.inactive-bookmark
+                = image_tag 'bookmark.png'
+          - if @management.images.attached?
+            - if @management.images.first && @management.images.second && @management.images.third #写真枚数で表示変更
+              .information_image_three
+                .information_image_three_first
+                  = image_tag @management.images.first
+                .information_image_three_second
+                  = image_tag @management.images.second
+                .information_image_three_third
+                  = image_tag @management.images.third
+            - elsif @management.images.first && @management.images.second
+              .information_image_two
+                .information_image_two_first
+                  = image_tag @management.images.first
+                .information_image_two_second
+                  = image_tag @management.images.second
+            - else @management.images.first
+              .information_image_one
+                .information_image_one_first
+                  = image_tag @management.images.first
+          .information_title
+            = @management.title
+          .information_content
+            = @management.content
+  .aside
