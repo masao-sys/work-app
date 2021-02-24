@@ -38,6 +38,12 @@ class ManagementsController < ApplicationController
     end
   end
 
+  def destroy
+    management = current_user.managements.find(params[:id])
+    management.destroy!
+    redirect_to managements_path, notice: '削除に成功しました'
+  end
+
   private
   def management_params
     params.require(:management).permit(:title, :content, images: [])
