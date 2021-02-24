@@ -21,8 +21,7 @@ class Management < ApplicationRecord
   has_many_attached :images
 
   belongs_to :user
-
-  has_many_attached :images
+  has_many :management_comments, dependent: :destroy
 
   def images_presence
     if images.count >= 4
