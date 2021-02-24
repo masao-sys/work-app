@@ -14,9 +14,21 @@
 #  index_managements_on_user_id  (user_id)
 #
 class Management < ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
+  validate :images_presence
+
+  has_many_attached :images
+
   belongs_to :user
 
   has_many_attached :images
+
+  def images_presence
+    if images.count >= 4
+      errors.add(:images, 'は3つまで指定できます')
+    end
+  end
 
   def author_name
     user.display_name
