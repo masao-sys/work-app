@@ -20,8 +20,8 @@
                 .dropdown
                   = image_tag 'actions.svg', class: 'dropbtn'
                   .dropdown-content.mini
-                    = link_to '編集する', edit_information_path(@management)
-                    = link_to '削除する', information_path(@management), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+                    = link_to '編集する', edit_management_path(@management)
+                    = link_to '削除する', management_path(@management), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
               .information_detail_actions_bookmark
                 = image_tag 'active-bookmark.png'
               .information_detail_actions_bookmark.hidden.inactive-bookmark

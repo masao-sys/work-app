@@ -24,6 +24,20 @@ class ManagementsController < ApplicationController
     end
   end
 
+  def edit
+    @management = current_user.managements.find(params[:id])
+  end
+
+  def update
+    @management = current_user.managements.find(params[:id])
+    if @management.update(management_params)
+      redirect_to management_path(@management), notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
+  end
+
   private
   def management_params
     params.require(:management).permit(:title, :content, images: [])
