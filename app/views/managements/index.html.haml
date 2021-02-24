@@ -21,9 +21,6 @@
                   %p= management.author_name
                 .card_detail_user_create
                   %p= management.display_created_at
-              - if current_user.department == 'management'
-                .card_detail_bookmark
-                  = image_tag 'bookmark.png'
             .card_title
               = management.title
             .card_content
