@@ -11,6 +11,10 @@ ja:
         title: 'タイトル'
         content: '内容'
         images: '写真'
+      management:
+        title: 'タイトル'
+        content: '内容'
+        images: '写真'
   date:
     abbr_day_names:
     - 日
