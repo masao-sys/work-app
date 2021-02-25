@@ -1,0 +1,11 @@
+.container_form
+  %ul
+    - @management_comment.errors.full_messages.each do |message|
+      %li= message
+
+  = form_with(model: @management_comment, url: management_management_comment_path(@management_comment.management), local: true) do |f|
+    %div
+      = f.label :content, '内容'
+    %div
+      = f.text_area :content
+    = f.submit '保存', class: 'btn-primary'

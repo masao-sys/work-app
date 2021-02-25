@@ -16,12 +16,13 @@
               .information_detail_user_create
                 %p= @management.display_created_at
             .information_detail_actions
-              .information_detail_actions_dorpdown
-                .dropdown
-                  = image_tag 'actions.svg', class: 'dropbtn'
-                  .dropdown-content.mini
-                    = link_to '編集する', edit_management_path(@management)
-                    = link_to '削除する', management_path(@management), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+              - if user_signed_in? && current_user.has_management_written?(@management)
+                .information_detail_actions_dorpdown
+                  .dropdown
+                    = image_tag 'actions.svg', class: 'dropbtn'
+                    .dropdown-content.mini
+                      = link_to '編集する', edit_management_path(@management)
+                      = link_to '削除する', management_path(@management), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
           - if @management.images.attached?
             - if @management.images.first && @management.images.second && @management.images.third #写真枚数で表示変更
               .information_image_three
@@ -45,4 +46,32 @@
             = @management.title
           .information_content
             = @management.content
+    .container
+      - @management_comments.each do |management_comment|
+        .information
+          .information_wrap
+            .information_detail
+              .information_detail_image
+                = link_to account_path(management_comment.user) do
+                  = image_tag management_comment.user.avatar_image
+              .information_detail_user
+                .information_detail_user_name
+                  %p= management_comment.author_name
+                .information_detail_user_create
+                  %p= management_comment.display_created_at
+              - if user_signed_in? && current_user.has_management_comment_written?(management_comment)
+                .information_detail_actions
+                  .information_detail_actions_dorpdown
+                    .dropdown
+                      = image_tag 'actions.svg', class: 'dropbtn'
+                      .dropdown-content.mini
+                        = link_to '編集する', edit_management_management_comment_path(management_id: management_comment.management_id, id: management_comment.id)
+                        = link_to '削除する', management_management_comment_path(management_id: management_comment.management_id, id: management_comment.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+            .information_content
+              %p= management_comment.content
+    - if current_user.department == 'management'
+      .container
+        = link_to new_management_management_comment_path(@management) do
+          .btn-secondary
+            コメントを追加
   .aside

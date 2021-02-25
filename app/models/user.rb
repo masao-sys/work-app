@@ -30,6 +30,7 @@ class User < ApplicationRecord
   has_many :reads, dependent: :destroy
   has_many :favorite_informations, through: :bookmarks, source: :information
   has_many :managements, dependent: :destroy
+  has_many :management_comments, dependent: :destroy
 
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
@@ -39,6 +40,18 @@ class User < ApplicationRecord
 
   def has_read?(information)
     reads.exists?(information: information.id)
+  end
+
+  def has_information_written?(information)
+    informations.exists?(id: information.id)
+  end
+
+  def has_management_written?(management)
+    managements.exists?(id: management.id)
+  end
+
+  def has_management_comment_written?(management_comment)
+    management_comments.exists?(id: management_comment.id)
   end
 
   def display_name

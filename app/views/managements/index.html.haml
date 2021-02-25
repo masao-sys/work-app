@@ -2,13 +2,16 @@
   = render 'commons/profile_image', user: current_user
   .main
     .container
-      .pageTitleBtn
-        %h2 経営陣
-        - if current_user.department == 'management'
+      - if current_user.department == 'management'
+        .pageTitleBtn
+          %h2 経営陣
           .create
             = link_to new_management_path do
               .create_button
                 %p ＋新規ボード作成
+      - else
+        .pageTitle
+          %h2 経営陣
       - @managements.each do |management|
         .card
           .card_wrap

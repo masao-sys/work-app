@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
 
   resources :departments, only: [:index]
-  resources :managements, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
+  resources :managements do
+    resources :management_comments, only: [:new, :create, :edit, :update, :destroy]
+  end
 
   resource :basic_profile, only: [:show, :edit, :update]
   resource :custom_profile, only: [:edit, :update]
