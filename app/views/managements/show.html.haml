@@ -46,6 +46,21 @@
           .information_content
             = @management.content
     .container
+      - @management_comments.each do |management_comment|
+        .information
+          .information_wrap
+            .information_detail
+              .information_detail_image
+                = link_to account_path(management_comment.user) do
+                  = image_tag management_comment.user.avatar_image
+              .information_detail_user
+                .information_detail_user_name
+                  %p= management_comment.author_name
+                .information_detail_user_create
+                  %p= management_comment.display_created_at
+            .information_content
+              %p= management_comment.content
+    .container
       = link_to new_management_management_comment_path(@management) do
         .btn-secondary
           コメントを追加

@@ -17,4 +17,14 @@
 class ManagementComment < ApplicationRecord
   belongs_to :user
   belongs_to :management
+
+  validates :content, presence: true
+
+  def author_name
+    user.display_name
+  end
+
+  def display_created_at
+    I18n.l(self.created_at, format: :default)
+  end
 end
