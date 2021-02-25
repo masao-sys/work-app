@@ -2,13 +2,16 @@
   = render 'commons/profile_image', user: current_user
   .main
     .container
-      .pageTitleBtn
-        %h2 全体連絡
-        - if can? :read, @information
+      - if can? :read, @information
+        .pageTitleBtn
+          %h2 全体連絡
           .create
             = link_to new_information_path do
               .create_button
                 %p ＋全体連絡作成
+      - else
+        .pageTitle
+          %h2 全体連絡
       - @informations.each do |information|
         = render 'commons/informations', information: information
   .aside

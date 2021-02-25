@@ -42,6 +42,18 @@ class User < ApplicationRecord
     reads.exists?(information: information.id)
   end
 
+  def has_information_written?(information)
+    informations.exists?(id: information.id)
+  end
+
+  def has_management_written?(management)
+    managements.exists?(id: management.id)
+  end
+
+  def has_management_comment_written?(management_comment)
+    management_comments.exists?(id: management_comment.id)
+  end
+
   def display_name
     basic_profile&.name || self.email.split('@').first
   end
