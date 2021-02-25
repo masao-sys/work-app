@@ -2,6 +2,12 @@ class ManagementCommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :if_not_management, only: [:new, :create, :edit, :update, :destroy]
 
+  def index
+    management = Management.find(params[:management_id])
+    management_comments = management.management_comments
+    render json: management_comments
+  end
+
   def new
     management = Management.find(params[:management_id])
     @management_comment = management.management_comments.build
