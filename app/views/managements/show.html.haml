@@ -45,4 +45,8 @@
             = @management.title
           .information_content
             = @management.content
+    .container
+      = link_to new_management_management_comment_path(@management) do
+        .btn-secondary
+          コメントを追加
   .aside

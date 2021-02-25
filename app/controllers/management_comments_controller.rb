@@ -1,0 +1,30 @@
+class ManagementCommentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :if_not_management, only: [:new, :create, :edit, :update, :destroy]
+
+  def new
+    management = Management.find(params[:management_id])
+    @management_comment = management.management_comments.build
+  end
+
+  def create
+    management = Management.find(params[:management_id])
+    @management_comment = management.management_comments.build(management_comment_params.merge!(user_id: current_user.id))
+    if @management_comment.save
+      redirect_to management_path(management), notice: '保存できたよ'
+    else
+      flash.now[:error] = '保存に失敗しました'
+      render :new
+    end
+  end
+
+  private
+  def management_comment_params
+    params.require(:management_comment).permit(:content)
+  end
+
+  private
+  def if_not_management
+    redirect_to root_path unless current_user.department == 'management'
+  end
+end
