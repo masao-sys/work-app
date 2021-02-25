@@ -1,6 +1,6 @@
 class ManagementCommentsController < ApplicationController
   before_action :authenticate_user!
-  # before_action :if_not_management, only: [:new, :create, :edit, :update, :destroy]
+  before_action :if_not_management, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     management = Management.find(params[:management_id])
@@ -34,6 +34,13 @@ class ManagementCommentsController < ApplicationController
     end
   end
 
+  def destroy
+    management = Management.find(params[:management_id])
+    management_comment = management.management_comments.find(params[:id])
+    management_comment.destroy!
+    redirect_to management_path(management), notice: '削除に成功しました'
+  end
+
   private
   def management_comment_params
     params.require(:management_comment).permit(:content)
@@ -41,6 +48,6 @@ class ManagementCommentsController < ApplicationController
 
   private
   def if_not_management
-    redirect_to root_path unless current_user.department == 'management'
+    redirect_to managements_path unless current_user.department == 'management'
   end
 end

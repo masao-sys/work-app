@@ -69,8 +69,9 @@
                         = link_to '削除する', management_management_comment_path(management_id: management_comment.management_id, id: management_comment.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
             .information_content
               %p= management_comment.content
-    .container
-      = link_to new_management_management_comment_path(@management) do
-        .btn-secondary
-          コメントを追加
+    - if current_user.department == 'management'
+      .container
+        = link_to new_management_management_comment_path(@management) do
+          .btn-secondary
+            コメントを追加
   .aside

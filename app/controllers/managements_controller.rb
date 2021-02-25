@@ -52,6 +52,6 @@ class ManagementsController < ApplicationController
 
   private
   def if_not_management
-    redirect_to root_path unless current_user.department == 'management'
+    redirect_to managements_path unless current_user.department == 'management'
   end
 end
