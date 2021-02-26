@@ -4,7 +4,7 @@
     .container
       .pageTitle
         %h2 経営陣
-      .information
+      .information#management-show{data: {management_id: @management.id}}
         .information_wrap
           .information_detail
             .information_detail_image
@@ -78,3 +78,5 @@
           .btn-secondary
             コメントを追加
   .aside
+
+= javascript_pack_tag 'management_comment'
