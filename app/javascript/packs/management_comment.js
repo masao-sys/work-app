@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const managementComments = response.data
       managementComments.forEach((management_comment) => {
         $('.management-comment-container').append(
-          `<div class="article_comment"><p>${management_comment.content}</p></div>`
+          `<img src="${management_comment.user.avatar_image}"></img>
+          <p>${management_comment.display_name}</p>
+          <p>${management_comment.display_created_at}</p>
+          <div class=""><p>${management_comment.content}</p></div>`
         )
       })    
     })
