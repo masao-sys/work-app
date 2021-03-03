@@ -13,11 +13,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const managementComments = response.data
       managementComments.forEach((management_comment) => {
         $('.management-comment-container').append(
-          `<img src="${management_comment.user.avatar_image}"></img>
-          <p>${management_comment.display_name}</p>
-          <p>${management_comment.display_created_at}</p>
-          <div class=""><p>${management_comment.content}</p></div>`
+          `<div class="information">
+            <div class="information_wrap">
+              <div class="information_detail">
+                <div class="information_detail_image">
+                  <img src="${management_comment.user.avatar_image}"></img>
+                </div>
+                <div class="information_detail_user">
+                  <div class="information_detail_user_name">
+                    <p>${management_comment.display_name}</p>
+                  </div>
+                  <div class="information_detail_user_create">
+                    <p>${management_comment.display_created_at}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="information_content">
+                <p>${management_comment.content}</p>
+              </div>
+            </div>
+          </div>`
         )
       })    
+    })
+
+    $('.management-comment-form').on('click', () => {
+      $('.management-comment-form').addClass('hidden')
+      $('.comment-text-area').removeClass('hidden')
     })
 })

@@ -74,7 +74,10 @@
       -#         %p= management_comment.content
     - if current_user.department == 'management'
       .container
-        = link_to new_management_management_comment_path(@management) do
+        .btn-secondary.management-comment-form
+          コメントを追加
+        .comment-text-area.hidden
+          = text_area_tag :comment_content, '', class: 'sm'
           .btn-secondary
             コメントを追加
   .aside
