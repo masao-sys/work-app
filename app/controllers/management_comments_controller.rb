@@ -5,7 +5,7 @@ class ManagementCommentsController < ApplicationController
   def index
     management = Management.find(params[:management_id])
     management_comments = management.management_comments
-    render json: management_comments
+    render json: management_comments, include: { user: [ :custom_profile] }
   end
 
   def new
@@ -16,12 +16,8 @@ class ManagementCommentsController < ApplicationController
   def create
     management = Management.find(params[:management_id])
     @management_comment = management.management_comments.build(management_comment_params.merge!(user_id: current_user.id))
-    if @management_comment.save
-      redirect_to management_path(management), notice: '保存できたよ'
-    else
-      flash.now[:error] = '保存に失敗しました'
-      render :new
-    end
+    @management_comment.save!
+    render json: @management_comment, include: { user: [ :custom_profile] }
   end
 
   def edit

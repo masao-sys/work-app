@@ -6,6 +6,10 @@ class UserSerializer < ActiveModel::Serializer
   has_many :management_comments
 
   def avatar_image
-    rails_blob_path(object.avatar_image) if object.avatar_image.attached?
+    if object.avatar_image != 'default-avatar.png'
+      rails_blob_path(object.avatar_image) 
+    else
+      '/assets/default-avatar.png'
+    end
   end
 end

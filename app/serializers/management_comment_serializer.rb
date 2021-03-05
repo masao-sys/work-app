@@ -1,8 +1,7 @@
 class ManagementCommentSerializer < ActiveModel::Serializer
-  attributes :id, :display_name, :content, :display_created_at
+  attributes :id, :user, :content, :display_name, :display_created_at
 
   belongs_to :user
-
 
   def display_name
     object.user.display_name
