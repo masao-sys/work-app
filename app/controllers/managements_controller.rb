@@ -8,7 +8,6 @@ class ManagementsController < ApplicationController
 
   def show
     @management = Management.find(params[:id])
-    @management_comments = @management.management_comments
   end
 
   def new
