@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :departments, only: [:index]
 
   resources :managements do
-    resources :management_comments, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :management_comments, only: [:index, :create]
   end
 
   resource :basic_profile, only: [:show, :edit, :update]
