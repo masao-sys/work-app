@@ -44,10 +44,7 @@ a {
 }
 
 .wrap {
-  width: 1300px;
-  margin: auto;
   display: flex;
-  flex: 1;
 }
 
 .profile {
@@ -56,10 +53,6 @@ a {
 
 .main {
   flex: 1;
-}
-
-.aside {
-  width: 350px;
 }
 
 .container {
