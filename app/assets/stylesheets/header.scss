@@ -4,15 +4,31 @@ $avatar-size: 40px;
 $header-padding-y: 16px;
 
 .header {
+  min-width: 1300px;
   background-color: $primary-color;
   padding: $header-padding-y 16px;
   font-weight: bold;
 
   &_width {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
     display: flex;
     justify-content: space-between;
+  }
+
+  &_right {
+    display: flex;
+
+    &_department {
+      color: white;
+      line-height: $avatar-size;
+      font-size: 18px;
+      margin-right: 20px;
+
+      a {
+        color: white;
+      }
+    }
   }
 
   &_loginBtn {
