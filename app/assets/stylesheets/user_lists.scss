@@ -2,22 +2,23 @@
 
 $avatar-size: 50px;
 
-.flex_wrap {
+.flex {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.already {
-  width: 30%;
+.affiliation {
   background-color: #FFF;
-  margin: 5px;
-  padding: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
   border-radius: 1em;
+}
+
+.lists {
+  width: 200px;
 
   &_detail {
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 10px;
     position: relative;
@@ -35,18 +36,10 @@ $avatar-size: 50px;
     }
 
     &_user {
-      align-items: center;
-      text-align: center;
 
       &_name {
         font-size: 14px;
         font-weight: bold;
-      }
-
-      &_department {
-        font-size: 14px;
-        font-weight: bold;
-        color: $primary-color;
       }
     }
   }
