@@ -12,9 +12,23 @@
     .profilePage_user_department
       #{I18n.t("enum.departments.#{user.department || 'unentered'}")}
   .side
+    %a{ href: 'http://mail.google.com', id: 'anchor2' }
+      .side_menu
+        .side_menu_image
+          = image_tag 'Gmail_29991.png'
+        .side_menu_text
+          %p メール
+    .side_line
     = link_to favorites_path do
       .side_menu
         .side_menu_image
           = image_tag 'tag.png'
         .side_menu_text
           %p ブックマーク
+    .side_line
+    = link_to user_lists_path do
+      .side_menu
+        .side_menu_image
+          = image_tag 's256_f_business_83_0bg.png'
+        .side_menu_text
+          %p 社員一覧

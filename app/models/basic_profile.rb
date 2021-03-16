@@ -24,4 +24,8 @@ class BasicProfile < ApplicationRecord
     return '未入力' unless birthday.present?
     birthday.strftime("%Y年%m月%d日")
   end
+
+  def author_name
+    user.display_name
+  end
 end

@@ -10,6 +10,7 @@
 @import 'common';
 @import 'already';
 @import 'department';
+@import 'user_lists';
 
 html {
   word-spacing: 1px;
@@ -44,10 +45,7 @@ a {
 }
 
 .wrap {
-  width: 1300px;
-  margin: auto;
   display: flex;
-  flex: 1;
 }
 
 .profile {
@@ -56,10 +54,6 @@ a {
 
 .main {
   flex: 1;
-}
-
-.aside {
-  width: 350px;
 }
 
 .container {

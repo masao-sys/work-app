@@ -9,10 +9,23 @@ $header-padding-y: 16px;
   font-weight: bold;
 
   &_width {
-    max-width: 1200px;
-    margin: auto;
     display: flex;
     justify-content: space-between;
+  }
+
+  &_right {
+    display: flex;
+
+    &_department {
+      color: white;
+      line-height: $avatar-size;
+      font-size: 18px;
+      margin-right: 20px;
+
+      a {
+        color: white;
+      }
+    }
   }
 
   &_loginBtn {

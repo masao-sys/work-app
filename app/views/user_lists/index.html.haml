@@ -1,0 +1,54 @@
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      .pageTitle
+        %h2 所属先一覧
+      .affiliation
+        %h3 経営陣
+        .flex
+          - @management_users.each do |management_user|
+            .lists
+              .lists_detail
+                .lists_detail_image
+                  = link_to account_path(management_user) do
+                    = image_tag management_user.user.avatar_image
+                .lists_detail_user
+                  .lists_detail_user_name
+                    = management_user.author_name
+      .affiliation
+        %h3 営業部
+        .flex
+          - @sale_users.each do |sale_user|
+            .lists
+              .lists_detail
+                .lists_detail_image
+                  = link_to account_path(sale_user) do
+                    = image_tag sale_user.user.avatar_image
+                .lists_detail_user
+                  .lists_detail_user_name
+                    = sale_user.author_name
+      .affiliation
+        %h3 製造部
+        .flex
+          - @production_users.each do |production_user|
+            .lists
+              .lists_detail
+                .lists_detail_image
+                  = link_to account_path(production_user) do
+                    = image_tag production_user.user.avatar_image
+                .lists_detail_user
+                  .lists_detail_user_name
+                    = production_user.author_name
+      .affiliation
+        %h3 開発部
+        .flex
+          - @development_users.each do |development_user|
+            .lists
+              .lists_detail
+                .lists_detail_image
+                  = link_to account_path(development_user) do
+                    = image_tag development_user.user.avatar_image
+                .lists_detail_user
+                  .lists_detail_user_name
+                    = development_user.author_name

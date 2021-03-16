@@ -62,29 +62,35 @@
   overflow: hidden;
   background-color: #FFF;
 
-    &_menu {
-      display: flex;
-      margin: 20px;
-      align-items: center;
-      
-      &_image {
-        border-radius: 1em;
-        overflow: hidden;
+  &_line {
+    border-top: 4px solid;
+    border-color: $base-bg-color;
+    margin: 0 10px;
+  }
 
-        img {
-          vertical-align: middle;
-          width: 64px;
-          height: 64px;
-          object-fit: cover;
-        }
-      }
+  &_menu {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    
+    &_image {
+      border-radius: 1em;
+      overflow: hidden;
 
-      &_text {
-        margin-left: 20px;
-        font-size: 18px;
-        font-weight: bold;
+      img {
+        vertical-align: middle;
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
       }
     }
+
+    &_text {
+      margin-left: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
 }
 
 .create {
