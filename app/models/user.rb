@@ -58,6 +58,10 @@ class User < ApplicationRecord
     management_comments.exists?(id: management_comment.id)
   end
 
+  def has_sale_written?(sale)
+    sales.exists?(id: sale.id)
+  end
+
   def display_name
     basic_profile&.name || self.email.split('@').first
   end

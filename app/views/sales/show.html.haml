@@ -1,0 +1,49 @@
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      .pageTitle
+        = link_to sales_path do
+          %h2 営業部
+      .information#sale-show{data: {sale_id: @sale.id}}
+        .information_wrap
+          .information_detail
+            .information_detail_image
+              = link_to account_path(@sale.user) do
+                = image_tag @sale.user.avatar_image
+            .information_detail_user
+              .information_detail_user_name
+                %p= @sale.author_name
+              .information_detail_user_create
+                %p= @sale.display_created_at
+            .information_detail_actions
+              - if user_signed_in? && current_user.has_sale_written?(@sale)
+                .information_detail_actions_dorpdown
+                  .dropdown
+                    = image_tag 'actions.svg', class: 'dropbtn'
+                    .dropdown-content.mini
+                      = link_to '編集する', edit_sale_path(@sale)
+                      = link_to '削除する', sale_path(@sale), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+          - if @sale.images.attached?
+            - if @sale.images.first && @sale.images.second && @sale.images.third
+              .information_image_three
+                .information_image_three_first
+                  = image_tag @sale.images.first
+                .information_image_three_second
+                  = image_tag @sale.images.second
+                .information_image_three_third
+                  = image_tag @sale.images.third
+            - elsif @sale.images.first && @sale.images.second
+              .information_image_two
+                .information_image_two_first
+                  = image_tag @sale.images.first
+                .information_image_two_second
+                  = image_tag @sale.images.second
+            - else @sale.images.first
+              .information_image_one
+                .information_image_one_first
+                  = image_tag @sale.images.first
+          .information_title
+            = @sale.title
+          .information_content
+            = @sale.content
