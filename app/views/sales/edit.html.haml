@@ -1,11 +1,11 @@
 .container_form
   %ul
-    - @management.errors.full_messages.each do |message|
+    - @sale.errors.full_messages.each do |message|
       %li= message
 
-  = form_with(model: @management, url: managements_path, method: 'post', local: true) do |f|
+  = form_with(model: @sale, url: sale_path, method: 'put', local: true) do |f|
     %div
-      = f.label :images, '3枚まで画像添付'
+      = f.label :images, '画像'
     %div
       = f.file_field :images,multiple: true
     %div

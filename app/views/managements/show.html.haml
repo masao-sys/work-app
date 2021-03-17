@@ -3,7 +3,8 @@
   .main
     .container
       .pageTitle
-        %h2 経営陣
+        = link_to managements_path do
+          %h2 経営陣
       .information#management-show{data: {management_id: @management.id}}
         .information_wrap
           .information_detail
@@ -24,7 +25,7 @@
                       = link_to '編集する', edit_management_path(@management)
                       = link_to '削除する', management_path(@management), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
           - if @management.images.attached?
-            - if @management.images.first && @management.images.second && @management.images.third #写真枚数で表示変更
+            - if @management.images.first && @management.images.second && @management.images.third
               .information_image_three
                 .information_image_three_first
                   = image_tag @management.images.first
@@ -48,7 +49,7 @@
             = @management.content
     .container
       .pageTitle
-        %h2 コメント
+        %h3 コメント
       .management-comment-container
 
     - if current_user.department == 'management'

@@ -4,6 +4,7 @@
     .container
       - if can? :read, @information
         .pageTitleBtn
+        = link_to informations_path do
           %h2 全体連絡
           .create
             = link_to new_information_path do
@@ -11,7 +12,8 @@
                 %p ＋全体連絡作成
       - else
         .pageTitle
-          %h2 全体連絡
+          = link_to informations_path do
+            %h2 全体連絡
       - @informations.each do |information|
         = render 'commons/informations', information: information
 
