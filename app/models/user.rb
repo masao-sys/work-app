@@ -37,6 +37,8 @@ class User < ApplicationRecord
   has_many :sales, dependent: :destroy
   has_many :sale_comments, dependent: :destroy
 
+  has_many :productions, dependent: :destroy
+
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
   def has_bookmark?(information)
