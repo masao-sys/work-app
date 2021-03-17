@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :sales do
+    resources :sale_comments, only: [:index, :create]
   end
 
   resource :basic_profile, only: [:show, :edit, :update]
