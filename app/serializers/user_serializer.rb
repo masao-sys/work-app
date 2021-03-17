@@ -23,6 +23,7 @@ class UserSerializer < ActiveModel::Serializer
   attributes :id, :avatar_image
 
   has_many :management_comments
+  has_many :sale_comments
 
   def avatar_image
     if object.avatar_image != 'default-avatar.png'
