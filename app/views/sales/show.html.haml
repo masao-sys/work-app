@@ -47,3 +47,18 @@
             = @sale.title
           .information_content
             = @sale.content
+    .container
+      .pageTitle
+        %h3 コメント
+      .sale-comment-container
+
+    - if current_user.department == 'sales'
+      .container
+        .btn-secondary.sale-comment-form
+          コメントを追加
+        .comment-text-area.hidden
+          = text_area_tag :comment_content, '', class: 'sm'
+          .btn-secondary.add-comment-button
+            コメントを追加
+
+= javascript_pack_tag 'sale_comment'

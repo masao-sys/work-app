@@ -16,7 +16,7 @@
 #
 class SaleComment < ApplicationRecord
   belongs_to :user
-  belongs_to :management
+  belongs_to :sale
 
   validates :content, presence: true
 
