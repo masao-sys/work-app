@@ -16,15 +16,16 @@
               .department_user_count
                 メンバー#{@basic_profile_managements.count}人
         .department
-          .department_user
-            .department_user_icon
-              .department_user_icon_background
-                = image_tag 'shaking-hands-3091906__340.webp'
-            .department_user_name
-              .department_user_displayName
-                %p 営業部
-            .department_user_count
-              メンバー#{@basic_profile_sales.count}人
+          = link_to sales_path do
+            .department_user
+              .department_user_icon
+                .department_user_icon_background
+                  = image_tag 'shaking-hands-3091906__340.webp'
+              .department_user_name
+                .department_user_displayName
+                  %p 営業部
+              .department_user_count
+                メンバー#{@basic_profile_sales.count}人
         .department
           .department_user
             .department_user_icon

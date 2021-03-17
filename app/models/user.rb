@@ -25,12 +25,16 @@ class User < ApplicationRecord
 
   has_one :basic_profile, dependent: :destroy
   has_one :custom_profile, dependent: :destroy
+
   has_many :informations, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :reads, dependent: :destroy
   has_many :favorite_informations, through: :bookmarks, source: :information
+
   has_many :managements, dependent: :destroy
   has_many :management_comments, dependent: :destroy
+
+  has_many :sales, dependent: :destroy
 
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
