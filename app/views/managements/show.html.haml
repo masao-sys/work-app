@@ -3,7 +3,8 @@
   .main
     .container
       .pageTitle
-        %h2 経営陣
+        = link_to managements_path do
+          %h2 経営陣
       .information#management-show{data: {management_id: @management.id}}
         .information_wrap
           .information_detail
@@ -48,7 +49,7 @@
             = @management.content
     .container
       .pageTitle
-        %h2 コメント
+        %h3 コメント
       .management-comment-container
 
     - if current_user.department == 'management'

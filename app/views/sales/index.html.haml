@@ -4,14 +4,16 @@
     .container
       - if current_user.department == 'sales'
         .pageTitleBtn
-          %h2 営業部
+          = link_to sales_path do
+            %h2 営業部
           .create
             = link_to new_sale_path do
               .create_button
                 %p ＋新規ボード作成
       - else
         .pageTitle
-          %h2 営業部
+          = link_to sales_path do
+            %h2 営業部
       - @sales.each do |sale|
         .card
           .card_wrap

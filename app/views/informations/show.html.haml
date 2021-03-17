@@ -3,7 +3,8 @@
   .main
     .container
       .pageTitle
-        %h2 全体連絡
+        = link_to informations_path do
+          %h2 全体連絡
       .information#information-show{data: {information_id: @information.id}}
         .information_wrap
           .information_detail

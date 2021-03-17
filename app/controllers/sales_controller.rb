@@ -24,6 +24,26 @@ class SalesController < ApplicationController
     end
   end
 
+  def edit
+    @sale = current_user.sales.find(params[:id])
+  end
+
+  def update
+    @sale = current_user.sales.find(params[:id])
+    if @sale.update(sale_params)
+      redirect_to sale_path(@sale), notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
+  end
+
+  def destroy
+    sale = current_user.sales.find(params[:id])
+    sale.destroy!
+    redirect_to sales_path, notice: '削除に成功しました'
+  end
+
   private
   def sale_params
     params.require(:sale).permit(:title, :content, images: [])
