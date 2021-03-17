@@ -1,0 +1,24 @@
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      - if current_user.department == 'production'
+        .pageTitleBtn
+          = link_to productions_path do
+            %h2 製造部
+          .create
+            = link_to new_production_path do
+              .create_button
+                %p ＋新規ボード作成
+      - else
+        .pageTitle
+          = link_to productions_path do
+            %h2 製造部
+      - @productions.each do |production|
+        .card
+          .card_wrap
+            = render 'commons/contact', contact: production
+            .card_display
+              = link_to production_path(production) do
+                .card_display_button
+                  %p 詳細を表示

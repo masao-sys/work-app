@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     resources :sale_comments, only: [:index, :create]
   end
 
+  resources :productions do
+  end
+
   resource :basic_profile, only: [:show, :edit, :update]
   resource :custom_profile, only: [:edit, :update]
   resources :accounts, only: [:show, :edit, :update]
