@@ -65,6 +65,10 @@ class User < ApplicationRecord
     sales.exists?(id: sale.id)
   end
 
+  def has_production_written?(production)
+    productions.exists?(id: production.id)
+  end
+
   def display_name
     basic_profile&.name || self.email.split('@').first
   end
