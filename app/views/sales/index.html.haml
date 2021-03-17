@@ -17,19 +17,7 @@
       - @sales.each do |sale|
         .card
           .card_wrap
-            .card_detail
-              .card_detail_image
-                = link_to account_path(sale.user) do
-                  = image_tag sale.user.avatar_image
-              .card_detail_user
-                .card_detail_user_name
-                  %p= sale.author_name
-                .card_detail_user_create
-                  %p= sale.display_created_at
-            .card_title
-              = sale.title
-            .card_content
-              = sale.content
+            = render 'commons/contact', contact: sale
             .card_display
               = link_to sale_path(sale) do
                 .card_display_button

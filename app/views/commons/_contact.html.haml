@@ -1,0 +1,13 @@
+.card_detail
+  .card_detail_image
+    = link_to account_path(contact.user) do
+      = image_tag contact.user.avatar_image
+  .card_detail_user
+    .card_detail_user_name
+      %p= contact.author_name
+    .card_detail_user_create
+      %p= contact.display_created_at
+.card_title
+  = contact.title
+.card_content
+  = contact.content
