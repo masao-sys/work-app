@@ -17,7 +17,7 @@ class SalesController < ApplicationController
   def create
     @sale = current_user.sales.build(sale_params)
     if @sale.save
-      redirect_to sale_path(@sale), notice: '保存できたよ'
+      redirect_to sale_path(@sale), notice: '保存できたました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new

@@ -17,7 +17,7 @@ class ManagementsController < ApplicationController
   def create
     @management = current_user.managements.build(management_params)
     if @management.save
-      redirect_to management_path(@management), notice: '保存できたよ'
+      redirect_to management_path(@management), notice: '保存できました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new

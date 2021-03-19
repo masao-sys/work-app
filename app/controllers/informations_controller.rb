@@ -17,7 +17,7 @@ class InformationsController < ApplicationController
   def create
     @information = current_user.informations.build(information_params)
     if @information.save
-      redirect_to information_path(@information), notice: '保存できたよ'
+      redirect_to information_path(@information), notice: '保存できました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new

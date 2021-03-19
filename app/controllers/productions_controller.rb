@@ -17,11 +17,31 @@ class ProductionsController < ApplicationController
   def create
     @production = current_user.productions.build(production_params)
     if @production.save
-      redirect_to production_path(@production), notice: '保存できたよ'
+      redirect_to production_path(@production), notice: '保存できました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new
     end
+  end
+
+  def edit
+    @production = current_user.productions.find(params[:id])
+  end
+
+  def update
+    @production = current_user.productions.find(params[:id])
+    if @production.update(production_params)
+      redirect_to production_path(@production), notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
+  end
+
+  def destroy
+    production = current_user.productions.find(params[:id])
+    production.destroy!
+    redirect_to productions_path, notice: '削除に成功しました'
   end
 
   private
