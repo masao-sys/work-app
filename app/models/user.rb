@@ -37,6 +37,8 @@ class User < ApplicationRecord
   has_many :sales, dependent: :destroy
   has_many :sale_comments, dependent: :destroy
 
+  has_many :productions, dependent: :destroy
+
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
   def has_bookmark?(information)
@@ -61,6 +63,10 @@ class User < ApplicationRecord
 
   def has_sale_written?(sale)
     sales.exists?(id: sale.id)
+  end
+
+  def has_production_written?(production)
+    productions.exists?(id: production.id)
   end
 
   def display_name

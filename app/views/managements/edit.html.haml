@@ -5,7 +5,7 @@
 
   = form_with(model: @management, url: management_path, method: 'put', local: true) do |f|
     %div
-      = f.label :images, '画像'
+      = f.label :images, '画像3枚まで'
     %div
       = f.file_field :images,multiple: true
     %div

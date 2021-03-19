@@ -27,15 +27,16 @@
               .department_user_count
                 メンバー#{@basic_profile_sales.count}人
         .department
-          .department_user
-            .department_user_icon
-              .department_user_icon_background
-                = image_tag 'worker-5736096__340.webp'
-            .department_user_name
-              .department_user_displayName
-                %p 製造部
-            .department_user_count
-              メンバー#{@basic_profile_productions.count}人
+          = link_to productions_path do
+            .department_user
+              .department_user_icon
+                .department_user_icon_background
+                  = image_tag 'worker-5736096__340.webp'
+              .department_user_name
+                .department_user_displayName
+                  %p 製造部
+              .department_user_count
+                メンバー#{@basic_profile_productions.count}人
         .department
           .department_user
             .department_user_icon

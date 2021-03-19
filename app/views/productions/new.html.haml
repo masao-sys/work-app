@@ -1,15 +1,15 @@
 .container_form
   %ul
-    - @information.errors.full_messages.each do |message|
+    - @production.errors.full_messages.each do |message|
       %li= message
 
-  = form_with(model: @information, url: information_path(@information), method: 'put', local: true) do |f|
+  = form_with(model: @production, url: productions_path, method: 'post', local: true) do |f|
     %div
-      = f.label :images, '画像3枚まで'
+      = f.label :images, '3枚まで画像添付'
     %div
       = f.file_field :images,multiple: true
     %div
-      = f.label :title, '連絡事項'
+      = f.label :title, 'タイトル'
     %div
       = f.text_field :title, class: 'text'
     %div
@@ -17,3 +17,4 @@
     %div
       = f.text_area :content
     = f.submit '保存', class: 'btn-primary'
+    

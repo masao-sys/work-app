@@ -1,0 +1,49 @@
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      .pageTitle
+        = link_to productions_path do
+          %h2 営業部
+      .information#production-show{data: {production_id: @production.id}}
+        .information_wrap
+          .information_detail
+            .information_detail_image
+              = link_to account_path(@production.user) do
+                = image_tag @production.user.avatar_image
+            .information_detail_user
+              .information_detail_user_name
+                %p= @production.author_name
+              .information_detail_user_create
+                %p= @production.display_created_at
+            .information_detail_actions
+              - if user_signed_in? && current_user.has_production_written?(@production)
+                .information_detail_actions_dorpdown
+                  .dropdown
+                    = image_tag 'actions.svg', class: 'dropbtn'
+                    .dropdown-content.mini
+                      = link_to '編集する', edit_production_path(@production)
+                      = link_to '削除する', production_path(@production), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+          - if @production.images.attached?
+            - if @production.images.first && @production.images.second && @production.images.third
+              .information_image_three
+                .information_image_three_first
+                  = image_tag @production.images.first
+                .information_image_three_second
+                  = image_tag @production.images.second
+                .information_image_three_third
+                  = image_tag @production.images.third
+            - elsif @production.images.first && @production.images.second
+              .information_image_two
+                .information_image_two_first
+                  = image_tag @production.images.first
+                .information_image_two_second
+                  = image_tag @production.images.second
+            - else @production.images.first
+              .information_image_one
+                .information_image_one_first
+                  = image_tag @production.images.first
+          .information_title
+            = @production.title
+          .information_content
+            = @production.content
