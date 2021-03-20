@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :productions do
+    resources :production_comments, only: [:index, :create]
   end
 
   resource :basic_profile, only: [:show, :edit, :update]
