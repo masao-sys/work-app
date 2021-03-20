@@ -1,0 +1,24 @@
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      - if current_user.department == 'development'
+        .pageTitleBtn
+          = link_to developments_path do
+            %h2 
+          .create
+            = link_to new_development_path do
+              .create_button
+                %p ＋新規ボード作成
+      - else
+        .pageTitle
+          = link_to developments_path do
+            %h2 開発部
+      - @developments.each do |development|
+        .card
+          .card_wrap
+            = render 'commons/contact', contact: development
+            .card_display
+              = link_to development_path(development) do
+                .card_display_button
+                  %p 詳細を表示

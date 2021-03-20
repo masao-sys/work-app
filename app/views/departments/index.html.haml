@@ -38,12 +38,13 @@
               .department_user_count
                 メンバー#{@basic_profile_productions.count}人
         .department
-          .department_user
-            .department_user_icon
-              .department_user_icon_background
-                = image_tag 'istockphoto-912482942-170667a.jpg'
-            .department_user_name
-              .department_user_displayName
-                %p 開発部
-            .department_user_count
-              メンバー#{@basic_profile_developments.count}人
+          = link_to developments_path do
+            .department_user
+              .department_user_icon
+                .department_user_icon_background
+                  = image_tag 'istockphoto-912482942-170667a.jpg'
+              .department_user_name
+                .department_user_displayName
+                  %p 開発部
+              .department_user_count
+                メンバー#{@basic_profile_developments.count}人
