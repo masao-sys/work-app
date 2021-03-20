@@ -40,6 +40,8 @@ class User < ApplicationRecord
   has_many :productions, dependent: :destroy
   has_many :production_comments, dependent: :destroy
 
+  has_many :developments, dependent: :destroy
+
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
   def has_bookmark?(information)
@@ -67,6 +69,10 @@ class User < ApplicationRecord
   end
 
   def has_production_written?(production)
+    productions.exists?(id: production.id)
+  end
+
+  def has_development_written?(production)
     productions.exists?(id: production.id)
   end
 
