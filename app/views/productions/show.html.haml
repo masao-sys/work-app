@@ -47,3 +47,18 @@
             = @production.title
           .information_content
             = @production.content
+    .container
+      .pageTitle
+        %h3 コメント
+      .production-comment-container
+
+    - if current_user.department == 'production'
+      .container
+        .btn-secondary.production-comment-form
+          コメントを追加
+        .comment-text-area.hidden
+          = text_area_tag :comment_content, '', class: 'sm'
+          .btn-secondary.add-comment-button
+            コメントを追加
+
+= javascript_pack_tag 'production_comment'
