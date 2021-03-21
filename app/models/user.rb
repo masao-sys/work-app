@@ -60,10 +60,6 @@ class User < ApplicationRecord
     managements.exists?(id: management.id)
   end
 
-  def has_management_comment_written?(management_comment)
-    management_comments.exists?(id: management_comment.id)
-  end
-
   def has_sale_written?(sale)
     sales.exists?(id: sale.id)
   end
@@ -72,8 +68,8 @@ class User < ApplicationRecord
     productions.exists?(id: production.id)
   end
 
-  def has_development_written?(production)
-    productions.exists?(id: production.id)
+  def has_development_written?(development)
+    developments.exists?(id: development.id)
   end
 
   def display_name
