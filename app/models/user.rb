@@ -41,6 +41,7 @@ class User < ApplicationRecord
   has_many :production_comments, dependent: :destroy
 
   has_many :developments, dependent: :destroy
+  has_many :development_comments, dependent: :destroy
 
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
