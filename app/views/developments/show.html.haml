@@ -1,0 +1,49 @@
+.wrap
+  = render 'commons/profile_image', user: current_user
+  .main
+    .container
+      .pageTitle
+        = link_to developments_path do
+          %h2 開発部
+      .information#development-show{data: {development_id: @development.id}}
+        .information_wrap
+          .information_detail
+            .information_detail_image
+              = link_to account_path(@development.user) do
+                = image_tag @development.user.avatar_image
+            .information_detail_user
+              .information_detail_user_name
+                %p= @development.author_name
+              .information_detail_user_create
+                %p= @development.display_created_at
+            .information_detail_actions
+              - if user_signed_in? && current_user.has_development_written?(@development)
+                .information_detail_actions_dorpdown
+                  .dropdown
+                    = image_tag 'actions.svg', class: 'dropbtn'
+                    .dropdown-content.mini
+                      = link_to '編集する', edit_development_path(@development)
+                      = link_to '削除する', development_path(@development), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+          - if @development.images.attached?
+            - if @development.images.first && @development.images.second && @development.images.third
+              .information_image_three
+                .information_image_three_first
+                  = image_tag @development.images.first
+                .information_image_three_second
+                  = image_tag @development.images.second
+                .information_image_three_third
+                  = image_tag @development.images.third
+            - elsif @development.images.first && @development.images.second
+              .information_image_two
+                .information_image_two_first
+                  = image_tag @development.images.first
+                .information_image_two_second
+                  = image_tag @development.images.second
+            - else @development.images.first
+              .information_image_one
+                .information_image_one_first
+                  = image_tag @development.images.first
+          .information_title
+            = @development.title
+          .information_content
+            = @development.content
