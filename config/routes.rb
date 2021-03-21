@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     resources :production_comments, only: [:index, :create]
   end
 
+  resources :developments do
+    resources :development_comments, only: [:index, :create]
+  end
+
   resource :basic_profile, only: [:show, :edit, :update]
   resource :custom_profile, only: [:edit, :update]
   resources :accounts, only: [:show, :edit, :update]

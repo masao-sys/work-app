@@ -40,6 +40,8 @@ class User < ApplicationRecord
   has_many :productions, dependent: :destroy
   has_many :production_comments, dependent: :destroy
 
+  has_many :developments, dependent: :destroy
+
   delegate :birthday, :bday, :gender, :department, to: :basic_profile, allow_nil: true
 
   def has_bookmark?(information)
@@ -58,16 +60,16 @@ class User < ApplicationRecord
     managements.exists?(id: management.id)
   end
 
-  def has_management_comment_written?(management_comment)
-    management_comments.exists?(id: management_comment.id)
-  end
-
   def has_sale_written?(sale)
     sales.exists?(id: sale.id)
   end
 
   def has_production_written?(production)
     productions.exists?(id: production.id)
+  end
+
+  def has_development_written?(development)
+    developments.exists?(id: development.id)
   end
 
   def display_name
