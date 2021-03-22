@@ -8,7 +8,7 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#sale-show').data()
   const saleId = dataset.saleId
-  axios.get(`/sales/${saleId}/sale_comments`)
+  axios.get(`/api/sales/${saleId}/sale_comments`)
     .then((response) => {
       const saleComments = response.data
       saleComments.forEach((sale_comment) => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!content) {
         window.alert('コメントを入力してください')
       } else {
-        axios.post(`/sales/${saleId}/sale_comments`, {
+        axios.post(`/api/sales/${saleId}/sale_comments`, {
           sale_comment: {content: content}
         })
           .then((res) => {

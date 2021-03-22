@@ -8,7 +8,7 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#development-show').data()
   const developmentId = dataset.developmentId
-  axios.get(`/developments/${developmentId}/development_comments`)
+  axios.get(`/api/developments/${developmentId}/development_comments`)
     .then((response) => {
       const developmentComments = response.data
       developmentComments.forEach((development_comment) => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!content) {
         window.alert('コメントを入力してください')
       } else {
-        axios.post(`/developments/${developmentId}/development_comments`, {
+        axios.post(`/api/developments/${developmentId}/development_comments`, {
           development_comment: {content: content}
         })
           .then((res) => {

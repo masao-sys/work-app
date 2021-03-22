@@ -1,4 +1,4 @@
-class SaleCommentsController < ApplicationController
+class Api::SaleCommentsController < Api::ApplicationController
   before_action :authenticate_user!
   before_action :if_not_sale, only: [:new, :create, :edit, :update, :destroy]
 

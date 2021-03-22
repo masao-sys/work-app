@@ -15,14 +15,14 @@ const handleBookmarkDisplay = (hasBookmark) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#information-show').data()
   const informationId = dataset.informationId
-  axios.get(`/informations/${informationId}/bookmark`)
+  axios.get(`/api/informations/${informationId}/bookmark`)
     .then((response) => {
       const hasBookmark = response.data.hasBookmark
       handleBookmarkDisplay(hasBookmark)
     })
 
   $('.inactive-bookmark').on('click', () => {
-    axios.post(`/informations/${informationId}/bookmark`)
+    axios.post(`/api/informations/${informationId}/bookmark`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $('.active-bookmark').removeClass('hidden')
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.active-bookmark').on('click', () => {
-    axios.delete(`/informations/${informationId}/bookmark`)
+    axios.delete(`/api/informations/${informationId}/bookmark`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $('.active-bookmark').addClass('hidden')

@@ -1,4 +1,4 @@
-class DevelopmentCommentsController < ApplicationController
+class Api::DevelopmentCommentsController < Api::ApplicationController
   before_action :authenticate_user!
   before_action :if_not_development, only: [:new, :create, :edit, :update, :destroy]
 

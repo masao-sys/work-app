@@ -1,4 +1,4 @@
-class ProductionCommentsController < ApplicationController
+class Api::ProductionCommentsController < Api::ApplicationController
   before_action :authenticate_user!
   before_action :if_not_production, only: [:new, :create, :edit, :update, :destroy]
 
