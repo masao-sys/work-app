@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.inactive-bookmark').on('click', (e) => {
     e.preventDefault();
     const id = $(e.currentTarget).attr('id') //クリックしたdivのid取得
-    axios.post(`/informations/${id}/bookmark`)
+    axios.post(`/api/informations/${id}/bookmark`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $(`.active-bookmark.${id}`).removeClass('hidden')
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.active-bookmark').on('click', (e) => {
     e.preventDefault();
     const id = $(e.currentTarget).attr('id') //クリックしたdivのid取得
-    axios.delete(`/informations/${id}/bookmark`)
+    axios.delete(`/api/informations/${id}/bookmark`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $(`.active-bookmark.${id}`).addClass('hidden')

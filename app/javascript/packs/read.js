@@ -15,14 +15,14 @@ const handleReadDisplay = (hasRead) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#information-show').data()
   const informationId = dataset.informationId
-  axios.get(`/informations/${informationId}/read`)
+  axios.get(`/api/informations/${informationId}/read`)
     .then((response) => {
       const hasRead = response.data.hasRead
       handleReadDisplay(hasRead)
     })
 
   $('.inactive-read').on('click', () => {
-    axios.post(`/informations/${informationId}/read`)
+    axios.post(`/api/informations/${informationId}/read`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $('.active-read').removeClass('hidden')
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.active-read').on('click', () => {
-    axios.delete(`/informations/${informationId}/read`)
+    axios.delete(`/api/informations/${informationId}/read`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $('.active-read').addClass('hidden')

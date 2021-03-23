@@ -8,7 +8,7 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#production-show').data()
   const productionId = dataset.productionId
-  axios.get(`/productions/${productionId}/production_comments`)
+  axios.get(`/api/productions/${productionId}/production_comments`)
     .then((response) => {
       const productionComments = response.data
       productionComments.forEach((production_comment) => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!content) {
         window.alert('コメントを入力してください')
       } else {
-        axios.post(`/productions/${productionId}/production_comments`, {
+        axios.post(`/api/productions/${productionId}/production_comments`, {
           production_comment: {content: content}
         })
           .then((res) => {

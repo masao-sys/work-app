@@ -1,4 +1,4 @@
-class ManagementCommentsController < ApplicationController
+class Api::ManagementCommentsController < Api::ApplicationController
   before_action :authenticate_user!
   before_action :if_not_management, only: [:new, :create, :edit, :update, :destroy]
 
