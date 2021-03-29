@@ -42,7 +42,7 @@ Rails.application.routes.draw do
       resources :production_comments, only: [:index, :create]
     end
 
-    scope '/developments/:information_id' do
+    scope '/developments/:development_id' do
       resources :development_comments, only: [:index, :create]
     end
   end
