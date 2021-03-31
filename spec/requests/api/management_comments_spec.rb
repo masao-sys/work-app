@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::ManagementComments', type: :request do
-  let!(:user) { create(:user) }
-  let!(:management_profile) { create(:management_profile, user: user) }
+  let!(:user) { create(:user, :with_management_profile) }
   let!(:management) { create(:management, user: user) }
   let!(:management_comments) { create_list(:management_comment, 3, user: user, management: management) }
 

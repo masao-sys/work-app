@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Managements', type: :request do
-  let!(:management_user) { create(:user) }
-  let!(:management_profile) { create(:management_profile, user: management_user) }
-  let!(:sale_user) { create(:user) }
-  let!(:sale_profile) { create(:sale_profile, user: sale_user) }
+  let!(:management_user) { create(:user, :with_management_profile) }
+  let!(:sale_user) { create(:user, :with_sale_profile) }
   let!(:managements) { create_list(:management, 3, user: management_user) }
 
   describe 'GET /managements' do

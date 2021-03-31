@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Sales', type: :request do
-  let!(:sale_user) { create(:user) }
-  let!(:sale_profile) { create(:sale_profile, user: sale_user) }
-  let!(:production_user) { create(:user) }
-  let!(:production_profile) { create(:production_profile, user: production_user) }
+  let!(:sale_user) { create(:user, :with_sale_profile) }
+  let!(:production_user) { create(:user, :with_production_profile) }
   let!(:sales) { create_list(:sale, 3, user: sale_user) }
 
   describe 'GET /sales' do

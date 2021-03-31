@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Developments', type: :request do
-  let!(:development_user) { create(:user) }
-  let!(:development_profile) { create(:development_profile, user: development_user) }
-  let!(:production_user) { create(:user) }
-  let!(:production_profile) { create(:production_profile, user: production_user) }
+  let!(:development_user) { create(:user, :with_development_profile) }
+  let!(:production_user) { create(:user, :with_production_profile) }
   let!(:developments) { create_list(:development, 3, user: development_user) }
 
   describe 'GET /developments' do
