@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::DevelopmentComments', type: :request do
-  let!(:user) { create(:user) }
-  let!(:development_profile) { create(:development_profile, user: user) }
+  let!(:user) { create(:user, :with_development_profile) }
   let!(:development) { create(:development, user: user) }
   let!(:development_comments) { create_list(:development_comment, 3, user: user, development: development) }
 

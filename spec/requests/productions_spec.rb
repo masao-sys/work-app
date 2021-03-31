@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Productions', type: :request do
-  let!(:production_user) { create(:user) }
-  let!(:production_profile) { create(:production_profile, user: production_user) }
-  let!(:development_user) { create(:user) }
-  let!(:development_profile) { create(:development_profile, user: development_user) }
+  let!(:production_user) { create(:user, :with_production_profile) }
+  let!(:development_user) { create(:user, :with_development_profile) }
   let!(:productions) { create_list(:production, 3, user: production_user) }
 
   describe 'GET /productions' do

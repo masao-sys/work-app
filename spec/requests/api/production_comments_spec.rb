@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::ProductionComments', type: :request do
-  let!(:user) { create(:user) }
-  let!(:production_profile) { create(:production_profile, user: user) }
+  let!(:user) { create(:user, :with_production_profile) }
   let!(:production) { create(:production, user: user) }
   let!(:production_comments) { create_list(:production_comment, 3, user: user, production: production) }
 

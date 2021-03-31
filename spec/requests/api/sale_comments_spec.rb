@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::SaleComments', type: :request do
-  let!(:user) { create(:user) }
-  let!(:sale_profile) { create(:sale_profile, user: user) }
+  let!(:user) { create(:user, :with_sale_profile) }
   let!(:sale) { create(:sale, user: user) }
   let!(:sale_comments) { create_list(:sale_comment, 3, user: user, sale: sale) }
 
