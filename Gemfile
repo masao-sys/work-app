@@ -30,6 +30,7 @@ gem 'faker'
 gem 'hamlit'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
