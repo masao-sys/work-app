@@ -1,0 +1,16 @@
+{
+  "name": "work app",
+  "description": "This is workapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/M-Takeuchi-sys/work-app",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}
