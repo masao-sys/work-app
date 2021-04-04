@@ -3,6 +3,12 @@
 .department {
   width:48%;
 
+  &_flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
   &_user {
     margin-bottom: 15px;
     border-radius: 1em;
@@ -48,5 +54,15 @@
       justify-content: center;
       margin-bottom: 10px;
     }
+  }
+}
+
+@media ( max-width : 500px ) {
+  .department_flex {
+    display: block;
+  }
+
+  .department {
+    width: 100%;
   }
 }

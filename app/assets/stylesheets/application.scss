@@ -80,3 +80,9 @@ a {
 .hidden {
   display: none;
 }
+
+@media ( max-width : 500px ) {
+  .profile {
+    display: none;
+  }
+}
