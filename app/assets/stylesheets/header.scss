@@ -5,10 +5,14 @@ $header-padding-y: 16px;
 
 .header {
   background-color: $primary-color;
-  padding: $header-padding-y 16px;
+  padding: $header-padding-y 0;
   font-weight: bold;
 
   &_width {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
   }
