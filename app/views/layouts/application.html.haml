@@ -12,8 +12,12 @@
   %body
     %header.header
       .header_width
-        %p.header_pageTitle
-          = link_to 'WORK APP', root_path
+        .header_logos
+          - if !current_page?(root_path)
+            = link_to :back do
+              = image_tag 'back.svg', class: 'header_back'
+          %p.header_pageTitle
+            = link_to 'WORK APP', root_path
         .header_right
           %p.header_right_department
             = link_to '組織', departments_path
