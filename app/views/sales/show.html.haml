@@ -27,21 +27,21 @@
           - if @sale.images.attached?
             - if @sale.images.first && @sale.images.second && @sale.images.third
               .information_image_three
-                .information_image_three_first
+                .information_image
                   = image_tag @sale.images.first
-                .information_image_three_second
+                .information_image
                   = image_tag @sale.images.second
-                .information_image_three_third
+                .information_image
                   = image_tag @sale.images.third
             - elsif @sale.images.first && @sale.images.second
               .information_image_two
-                .information_image_two_first
+                .information_image
                   = image_tag @sale.images.first
-                .information_image_two_second
+                .information_image
                   = image_tag @sale.images.second
             - else @sale.images.first
               .information_image_one
-                .information_image_one_first
+                .information_image
                   = image_tag @sale.images.first
           .information_title
             = @sale.title

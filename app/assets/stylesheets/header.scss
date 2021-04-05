@@ -2,15 +2,32 @@
 
 $avatar-size: 40px;
 $header-padding-y: 16px;
+$back-icon-size: 16px;
 
 .header {
   background-color: $primary-color;
-  padding: $header-padding-y 16px;
+  padding: $header-padding-y 0;
   font-weight: bold;
 
   &_width {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
+  }
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+
+    img {
+      cursor: pointer;
+      width: $back-icon-size;
+      height: $back-icon-size;
+      margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+    }
   }
 
   &_right {

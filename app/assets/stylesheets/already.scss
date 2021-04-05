@@ -9,7 +9,7 @@ $avatar-size: 50px;
 }
 
 .already {
-  width: 30%;
+  width: 48%;
   background-color: #FFF;
   margin: 5px;
   padding: 5px;
@@ -49,5 +49,11 @@ $avatar-size: 50px;
         color: $primary-color;
       }
     }
+  }
+}
+
+@media ( max-width : 500px ) {
+  .already {
+    width: 100%;
   }
 }

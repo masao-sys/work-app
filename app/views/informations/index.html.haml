@@ -4,8 +4,8 @@
     .container
       - if can? :read, @information
         .pageTitleBtn
-        = link_to informations_path do
-          %h2 全体連絡
+          = link_to informations_path do
+            %h2 全体連絡
           .create
             = link_to new_information_path do
               .create_button

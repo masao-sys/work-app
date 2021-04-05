@@ -4,15 +4,15 @@
     .container
       .pageTitle
         %h2 既読ユーザー
-        .flex_wrap
-          - @users.each do |user|
-            .already
-              .already_detail
-                .already_detail_image
-                  = link_to account_path(user) do
-                    = image_tag user.avatar_image
-                .already_detail_user
-                  .already_detail_user_name
-                    = user.display_name
-                  .already_detail_user_department
-                    #{I18n.t("enum.departments.#{user.department || 'unentered'}")}
+      .flex_wrap
+        - @users.each do |user|
+          .already
+            .already_detail
+              .already_detail_image
+                = link_to account_path(user) do
+                  = image_tag user.avatar_image
+              .already_detail_user
+                .already_detail_user_name
+                  = user.display_name
+                .already_detail_user_department
+                  #{I18n.t("enum.departments.#{user.department || 'unentered'}")}
