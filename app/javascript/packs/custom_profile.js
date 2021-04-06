@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.readAsDataURL(imageFile);
     return def.promise();
   };
+});
 
+document.addEventListener('DOMContentLoaded', () => {
   $('#background_preview').on('click', () => {
     $('#background_file_field').trigger("click");
   });
