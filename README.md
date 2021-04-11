@@ -7,7 +7,7 @@
 下記のページにて公開中です<br>
 https://work-pf.herokuapp.com/
 
-|  ユーザー    |     ID          |     PassWord |
+| ユーザー | ID | PassWord |
 |:-----------|------------:|:------------:|
 | This       | This        | This         |
 | column     | column      | column       |
