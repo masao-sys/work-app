@@ -4,6 +4,15 @@
 - 社員が連絡事項を確認したのかが分かる
 - 部署ごとの掲示板にてタスク管理
 
-
 下記のページにて公開中です<br>
 https://work-pf.herokuapp.com/
+
+|  ユーザー    |     ID          |     PassWord |
+|:-----------|------------:|:------------:|
+| This       | This        | This         |
+| column     | column      | column       |
+| will       | will        | will         |
+| be         | be          | be           |
+| left       | right       | center       |
+| aligned    | aligned     | aligned      |
+
