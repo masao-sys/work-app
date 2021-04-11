@@ -8,7 +8,7 @@
 https://work-pf.herokuapp.com/
 
 | ユーザー | ID | PassWord |
-|:-----------|------------:|:------------:|
+|:-----------:|:------------:|:------------:|
 | This       | This        | This         |
 | column     | column      | column       |
 | will       | will        | will         |
