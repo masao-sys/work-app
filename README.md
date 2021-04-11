@@ -9,7 +9,7 @@ https://work-pf.herokuapp.com/
 
 | ユーザー | ID | PassWord |
 |:-----------:|:------------:|:------------:|
-| This       | This        | This         |
+| 管理者       | admin@example.com        |          |
 | column     | column      | column       |
 | will       | will        | will         |
 | be         | be          | be           |
