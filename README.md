@@ -11,11 +11,13 @@ https://work-pf.herokuapp.com/
 　下記 ID Password を利用してログインしてください
 
 | ユーザー | ID | PassWord |
-|:-----------:|:------------:|:------------:|
-| 管理者       | admin@example.com        | password |
-| column     | column      | column       |
-| will       | will        | will         |
-| be         | be          | be           |
-| left       | right       | center       |
-| aligned    | aligned     | aligned      |
-
+|:-----:|:------------:|:------------:|
+| 管理者 | admin@example.com | password |
+| 経営陣 | management1@example.com | password |
+| 経営陣 | management2@example.com | password |
+| 営業部 | sales1@example.com | password |
+| 営業部 | sales2@example.com | password |
+| 製造部 | production1@example.com | password |
+| 製造部 | production2@example.com | password |
+| 開発部 | development1@example.com | password |
+| 開発部 | development2@example.com | password |
