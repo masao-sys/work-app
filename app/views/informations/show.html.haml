@@ -57,10 +57,9 @@
             .information_read_inReadButton.hidden.inactive-read
               %a 既読
           .information_userRead
-            .information_userRead_count
-              %p= @information.read_count
-            .information_userRead_text
-              %p 人
+            = link_to information_alreadys_path(@information) do
+              .information_userRead_count
+                #{@information.read_count}人
             %p が既読
 
 = javascript_pack_tag 'bookmark_show'

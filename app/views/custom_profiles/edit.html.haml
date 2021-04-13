@@ -2,7 +2,7 @@
   %ul
     - @custom_profile.errors.full_messages.each do |message|
       %li= message
-  .profilePage_user
+  .profilePage_user_bg
     .profilePage_user_icon
       .profilePage_user_icon_background_edit#background_preview
         = image_tag current_user.background_image
