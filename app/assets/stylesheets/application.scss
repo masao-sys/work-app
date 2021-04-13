@@ -82,7 +82,22 @@ a {
 }
 
 @media ( max-width : 500px ) {
+  .wrap {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
   .profile {
     display: none;
+  }
+
+  .container {
+  
+    &_form {
+      padding: 16px 16px;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }
