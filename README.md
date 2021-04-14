@@ -70,3 +70,6 @@ binding_of_caller/devise/faker//byebug/dotenv-rails/
 factory_bot_rails/pry-byebug/rails-erd/  
 rails_admin/rspec-rails/rubocop-rails/erb2haml/capybara  
 
+## 製作者
+まさお
+[twitter](https://twitter.com/masao_pro)
