@@ -21,3 +21,5 @@ https://work-pf.herokuapp.com/
 | 製造部 | production2@example.com | password |
 | 開発部 | development1@example.com | password |
 | 開発部 | development2@example.com | password |
+
+<img width="1440" alt="スクリーンショット 2021-04-14 15 52 04" src="https://user-images.githubusercontent.com/66783799/114668591-e37a3380-9d3b-11eb-84ab-4beee340b7fb.png">
