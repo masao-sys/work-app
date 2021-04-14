@@ -63,4 +63,10 @@ https://work-pf.herokuapp.com/
   
 インフラ・開発環境  
 　・PostgreSQL 13.・heroku・RSpec
+ 
+ ## 使用Gem  
+active_model_serializers/annotate/aws-sdk-s3/better_errors/  
+binding_of_caller/devise/faker//byebug/dotenv-rails/  
+factory_bot_rails/pry-byebug/rails-erd/  
+rails_admin/rspec-rails/rubocop-rails/erb2haml/capybara  
 
