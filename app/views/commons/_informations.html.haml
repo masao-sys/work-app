@@ -22,7 +22,7 @@
     .card_title
       = information.title
     .card_content
-      = information.content
+      %p= information.content.truncate(35)
     .card_display
       = link_to information_path(information) do
         .card_display_button
