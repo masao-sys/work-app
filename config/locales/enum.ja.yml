@@ -1,7 +1,7 @@
 ja:
   enum:
     departments:
-      management: '経営部'
+      management: '経営陣'
       sales: '営業部'
       production: '製造部'
       development: '開発部'
