@@ -82,15 +82,22 @@ a {
 }
 
 .description {
-  margin-top: 30px;
+  margin: 40px auto 0 auto;
+  text-align: center;
 
   &_color {
     font-weight: bold;
     color: #000000;
   }
 
-  p {
-    margin-top: 10px;
+  &_center {
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+
+    p {
+      margin-top: 15px;
+    }
   }
 }
 
