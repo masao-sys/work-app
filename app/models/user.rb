@@ -100,4 +100,16 @@ class User < ApplicationRecord
       'l_e_others_500.png'
     end
   end
+
+  def custom_nickname
+    custom_profile&.nickname
+  end
+
+  def custom_birthplace
+    custom_profile&.birthplace
+  end
+
+  def custom_introduction
+    custom_profile&.introduction
+  end
 end
