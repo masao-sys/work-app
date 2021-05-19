@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
           $('.inactive-read').addClass('hidden')
           const readCount = $('.information_userRead_count').text();
           const numReadCount = parseInt(readCount)
-          $('.information_userRead_count').text(numReadCount + 1)
+          $('.information_userRead_count').text(numReadCount + 1 + '人')
         }
       })
       .catch((e) => {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
           $('.inactive-read').removeClass('hidden')
           const readCount = $('.information_userRead_count').text();
           const numReadCount = parseInt(readCount)
-          $('.information_userRead_count').text(numReadCount - 1)
+          $('.information_userRead_count').text(numReadCount - 1 + '人')
         }
       })
       .catch((e) => {
