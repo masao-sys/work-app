@@ -72,4 +72,3 @@ rails_admin/rspec-rails/rubocop-rails/erb2haml/capybara
 
 ## 製作者
 まさお
-[twitter](https://twitter.com/masao_pro)
